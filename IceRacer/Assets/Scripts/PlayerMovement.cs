@@ -20,7 +20,9 @@ public class PlayerMovement : MonoBehaviour
         float moveY = Input.GetAxisRaw("Vertical");
 
         Vector3 movement = new Vector3(moveX, moveY, 0);
-        Debug.Log(movement);
         transform.position += movement * speed * Time.deltaTime;
+        Debug.Log(transform.position);
+
+        //transform.position = new Vector3(Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.y), 0);
     }
 }
