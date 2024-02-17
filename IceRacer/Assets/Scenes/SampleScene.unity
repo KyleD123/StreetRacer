@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   KMpH: 0
-  MaxKMpH: 120
+  MaxKMpH: 65
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
