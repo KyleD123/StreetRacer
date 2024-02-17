@@ -5,21 +5,17 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
 
-    public PlayerMovement pm;
-
+    private PlayerMovement pm;
     public float KMpH = 55;
-
     public float Speed = 10;
-    public float MaxSpeed = 100;
-
-    public Vector3 Movement;
-
+    private float MaxSpeed = 35;
+    private Vector3 Movement;
     private float PlayerKMpH;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
     }
 
     void FixedUpdate()
@@ -45,12 +41,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
 
-        // if(Speed > 0)
-        // {
-        //     Speed += KMpH/10;
-        // }
-
-        if(this.transform.position.x < -100f)
+        if(this.transform.position.x < -100f || this.transform.position.y > 100f)
         {
             Destroy(this.gameObject);
         }
