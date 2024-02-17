@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         while(true)
         {
-            float x = 51;
+            float x = Random.Range(55, 70);
             float y = Random.Range(-18, 18);
             SpawnEnemyCar(x,y);
             yield return new WaitForSeconds(3);

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -44,6 +45,21 @@ public class EnemyMovement : MonoBehaviour
         if(this.transform.position.x < -100f || this.transform.position.x > 100f)
         {
             Destroy(this.gameObject);
+        }
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        // ADD EXPLOSTION ANIMATION
+        if(collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Enemies Collided");
+            Destroy(collision.gameObject);
         }
     }
 }

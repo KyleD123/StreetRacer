@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Speed stuff (kinda whack tbh)
         moveX = Input.GetAxisRaw("Horizontal");
         if(KMpH < MaxKMpH && KMpH >= 0)
         {
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // Vertical movement
         moveY = Input.GetAxisRaw("Vertical");
         if(this.transform.position.y <= -19.02722f)
         {
@@ -54,9 +56,10 @@ public class PlayerMovement : MonoBehaviour
             this.transform.position = new Vector3(this.transform.position.x, 18.97278f, 0);
         }
 
-        // if(speed > 0)
-        // {
-        //     speed += KMpH / 10;
-        // }
+    }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision");
     }
 }
