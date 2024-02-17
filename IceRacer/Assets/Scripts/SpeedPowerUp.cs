@@ -1,12 +1,12 @@
 using System.Collections;
 using UnityEngine;
 
-public class PowerUp : MonoBehaviour
+public class SpeedPowerUp : MonoBehaviour
 {
 
     private PlayerMovement pm;
-    public float KMpH = 55;
-    public float Speed = 5.5f;
+    private float Speed = 5.5f;
+    private float MaxSpeed;
     private Vector3 Movement;
     private float PlayerKMpH;
 
@@ -24,15 +24,19 @@ public class PowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        this.MaxSpeed = pm.MaxKMpH - 25;
         PlayerKMpH = pm.KMpH;
-        if(this.KMpH > PlayerKMpH)
+        if(PlayerKMpH <= 0)
         {
-            Movement = new Vector3(-1, 0, 0);
-            Speed = 5.5f;
+            Movement = new Vector3(0, 0, 0);
         }
         else
         {
-            Movement = new Vector3(0, 0, 0);
+            Movement = new Vector3(-1, 0, 0);
+            if(Speed < MaxSpeed)
+            {
+                Speed += PlayerKMpH/10 * Time.deltaTime;
+            }
         }
 
         if(this.transform.position.x < -100f || this.transform.position.x > 100f)

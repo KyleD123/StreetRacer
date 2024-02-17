@@ -8,6 +8,9 @@ public class PlayerMovement : MonoBehaviour
     private float moveX;
     private float moveY;
 
+    [HideInInspector]
+    public int GasSpendRate = 1;
+
     public float KMpH;
     public float MaxKMpH;
 
@@ -58,24 +61,38 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void IncreaseGas(int amount)
+    {
+        this.gameObject.GetComponent<GasTank>().IncreaseGas(amount);
+    }
+
+    public void IncreaseGasSpendRate(int amount)
+    {
+        this.GasSpendRate += amount;
+        StartCoroutine(DecreaseGasSpendRate(amount));
+    }
+
+    private IEnumerator DecreaseGasSpendRate(int amount)
+    {
+        yield return new WaitForSeconds(6f);
+        this.GasSpendRate -= amount;
+    }
+
     public void IncreaseMaxKMpH(float amount)
     {
         this.MaxKMpH += amount;
         this.KMpH = this.MaxKMpH;
-        StartCoroutine(SlowDown(amount));
+        IncreaseGasSpendRate(2);
+        StartCoroutine(DecreaseMaxKMpH(amount));
     }
 
-    private IEnumerator SlowDown(float amount)
+    private IEnumerator DecreaseMaxKMpH(float amount)
     {
         yield return new WaitForSeconds(7);
-        DecreaseMaxKMpH(amount);
-    }
-
-    public void DecreaseMaxKMpH(float amount)
-    {
         this.MaxKMpH -= amount;
         this.KMpH = this.MaxKMpH;
     }
+
     
     private void OnCollisionEnter2D(Collision2D collision)
     {

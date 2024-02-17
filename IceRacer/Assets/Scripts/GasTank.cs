@@ -29,7 +29,7 @@ public class GasTank : MonoBehaviour
         }
         else
         {
-            DecreaseGas(1);
+            DecreaseGas(pm.GasSpendRate);
             TimeSpent = 0;
         }
     }
@@ -37,6 +37,10 @@ public class GasTank : MonoBehaviour
     public void IncreaseGas(int amount)
     {
         CurrentGas += amount;
+        if(CurrentGas > MaxGas)
+        {
+            CurrentGas = MaxGas;
+        }
     }
 
     public void DecreaseGas(int amount)

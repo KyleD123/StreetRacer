@@ -67,8 +67,9 @@
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\GasTank.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\GasPowerUp.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\PowerUp.cs" />
+    <Compile Include="Assets\Scripts\SpeedPowerUp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
