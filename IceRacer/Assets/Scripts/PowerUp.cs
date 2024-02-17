@@ -1,15 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class PowerUp : MonoBehaviour
 {
 
     private PlayerMovement pm;
     public float KMpH = 55;
-    public float Speed;
-    public float MaxSpeed;
+    public float Speed = 5.5f;
     private Vector3 Movement;
     private float PlayerKMpH;
 
@@ -27,20 +24,15 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.MaxSpeed = pm.MaxKMpH - 25;
         PlayerKMpH = pm.KMpH;
         if(this.KMpH > PlayerKMpH)
         {
-            Movement = new Vector3(1, 0, 0);
+            Movement = new Vector3(-1, 0, 0);
             Speed = 5.5f;
         }
         else
         {
-            Movement = new Vector3(-1, 0, 0);
-            if(Speed < MaxSpeed)
-            {
-                Speed += PlayerKMpH/10 * Time.deltaTime;
-            }
+            Movement = new Vector3(0, 0, 0);
         }
 
         if(this.transform.position.x < -100f || this.transform.position.x > 100f)
@@ -51,16 +43,16 @@ public class EnemyMovement : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        // ADD EXPLOSTION ANIMATION
         if(collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemies Collided");
             Destroy(collision.gameObject);
         }
+
+        if(collision.gameObject.tag == "Player")
+        {
+            pm.IncreaseMaxKMpH(100);
+            Destroy(this.gameObject);
+        }
+
     }
 }

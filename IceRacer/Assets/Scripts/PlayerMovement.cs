@@ -57,6 +57,25 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
+    public void IncreaseMaxKMpH(float amount)
+    {
+        this.MaxKMpH += amount;
+        this.KMpH = this.MaxKMpH;
+        StartCoroutine(SlowDown(amount));
+    }
+
+    private IEnumerator SlowDown(float amount)
+    {
+        yield return new WaitForSeconds(7);
+        DecreaseMaxKMpH(amount);
+    }
+
+    public void DecreaseMaxKMpH(float amount)
+    {
+        this.MaxKMpH -= amount;
+        this.KMpH = this.MaxKMpH;
+    }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
