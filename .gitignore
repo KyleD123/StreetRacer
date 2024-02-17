@@ -1,0 +1,13 @@
+IceRacer/[Ll]ibrary/
+IceRacer/[Uu]serSettings/
+IceRacer/[Tt]emp/
+IceRacer/[Oo]bj/
+IceRacer/[Bb]uild/
+IceRacer/[Bb]uilds/
+IceRacer/[Ll]ogs/
+IceRacer/[Mm]emoryCaptures/
+*.log
+IceRacer/Logs/AssetImportWorker1-prev.log
+IceRacer/ProjectSettings/ShaderGraphSettings.asset
+IceRacer/UserSettings/Layouts/default-2022.dwlt
+IceRacer/Logs/shadercompiler-UnityShaderCompiler.exe0.log
