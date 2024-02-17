@@ -53,5 +53,10 @@ public class PlayerMovement : MonoBehaviour
         {
             this.transform.position = new Vector3(this.transform.position.x, 18.97278f, 0);
         }
+
+        // if(speed > 0)
+        // {
+        //     speed += KMpH / 10;
+        // }
     }
 }
