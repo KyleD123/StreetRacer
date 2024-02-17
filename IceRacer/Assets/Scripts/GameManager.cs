@@ -10,9 +10,12 @@ public class GameManager : MonoBehaviour
     public GameObject SpeedUpPrefab;
     private Coroutine co1;
 
+    private PlayerMovement pm;
+
     // Start is called before the first frame update
     void Start()
     {
+        pm = FindObjectOfType<PlayerMovement>();
         co1 = StartCoroutine(SpawnCars());
     }
 
@@ -31,6 +34,10 @@ public class GameManager : MonoBehaviour
         while(true)
         {
             float x = Random.Range(55, 70);
+            if(pm.KMpH <= 0)
+            {
+                x = Random.Range(-60, -54);
+            }
             float y = Random.Range(-18, 18);
             float CarOrPowerUp = Random.Range(0,100);
             if(CarOrPowerUp >= 25)
@@ -53,7 +60,7 @@ public class GameManager : MonoBehaviour
     public GameObject SpawnPowerUp(float x, float y)
     {
         float rnd = Random.Range(0,100);
-        if(rnd > 35)
+        if(rnd > 50)
         {
             return Instantiate(JerryCanPrefab, new Vector3(x,y,0), Quaternion.identity);
         }
