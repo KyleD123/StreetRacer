@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
 
-        if(this.transform.position.x < -100f || this.transform.position.y > 100f)
+        if(this.transform.position.x < -100f || this.transform.position.x > 100f)
         {
             Destroy(this.gameObject);
         }
