@@ -13,7 +13,7 @@ public class GasPowerUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     void FixedUpdate()

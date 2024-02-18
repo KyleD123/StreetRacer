@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     void FixedUpdate()
@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         if(this.KMpH > PlayerKMpH)
         {
             Movement = new Vector3(1, 0, 0);
-            Speed = 5.5f;
+            Speed = 9f;
         }
         else
         {
@@ -59,7 +59,6 @@ public class EnemyMovement : MonoBehaviour
         // ADD EXPLOSTION ANIMATION
         if(collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Enemies Collided");
             Destroy(collision.gameObject);
         }
     }

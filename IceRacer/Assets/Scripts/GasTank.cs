@@ -34,6 +34,7 @@ public class GasTank : MonoBehaviour
         }
     }
 
+    
     public void IncreaseGas(int amount)
     {
         CurrentGas += amount;

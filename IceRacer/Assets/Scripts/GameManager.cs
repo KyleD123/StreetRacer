@@ -5,18 +5,23 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public GameObject EnemyPrefab;
+    public GameObject[] EnemyPrefabs;
+    public GameObject[] PlayerPrefabs;
     public GameObject JerryCanPrefab;
     public GameObject SpeedUpPrefab;
     private Coroutine co1;
 
     private PlayerMovement pm;
 
+    private int playerIndex;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerIndex = 2;
+        SpawnPlayer(playerIndex);
         pm = FindObjectOfType<PlayerMovement>();
-        co1 = StartCoroutine(SpawnCars());
+        co1 = StartCoroutine(Spawner());
     }
 
     // Update is called once per frame
@@ -24,11 +29,11 @@ public class GameManager : MonoBehaviour
     {
         if(co1 == null)
         {
-            StartCoroutine(SpawnCars());
+            StartCoroutine(Spawner());
         }
     }
 
-    IEnumerator SpawnCars()
+    IEnumerator Spawner()
     {
         yield return new WaitForSeconds(3);
         while(true)
@@ -54,7 +59,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject SpawnEnemyCar(float x, float y)
     {
-        return Instantiate(EnemyPrefab, new Vector3(x,y,0), Quaternion.identity);
+        int rnd = Random.Range(0,3);
+        Debug.Log(rnd);
+        return Instantiate(EnemyPrefabs[rnd], new Vector3(x,y,0), Quaternion.identity);
     }
 
     public GameObject SpawnPowerUp(float x, float y)
@@ -68,6 +75,12 @@ public class GameManager : MonoBehaviour
         {
             return Instantiate(SpeedUpPrefab, new Vector3(x,y,0), Quaternion.identity);
         }
+    }
+
+
+    public void SpawnPlayer(int index)
+    {
+        Instantiate(PlayerPrefabs[index], new Vector3(-30, 0, 0), Quaternion.identity);
     }
 
 }
