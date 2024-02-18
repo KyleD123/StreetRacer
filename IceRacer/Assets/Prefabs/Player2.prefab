@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e7b46384a4fd4484bbfa919028c579f0, type: 3}
+    - target: {fileID: 3010826154664284282, guid: 4b9babd6132b36c4085fa9f2f55d63ef, type: 3}
+      propertyPath: speed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010826154664284282, guid: 4b9babd6132b36c4085fa9f2f55d63ef, type: 3}
+      propertyPath: MaxKMpH
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010826154664284282, guid: 4b9babd6132b36c4085fa9f2f55d63ef, type: 3}
+      propertyPath: GasSpendRate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6674858439006579647, guid: 4b9babd6132b36c4085fa9f2f55d63ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

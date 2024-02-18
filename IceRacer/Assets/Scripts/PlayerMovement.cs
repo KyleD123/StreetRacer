@@ -8,7 +8,6 @@ public class PlayerMovement : MonoBehaviour
     private float moveX;
     private float moveY;
 
-    [HideInInspector]
     public int GasSpendRate = 1;
 
     public float KMpH;
@@ -54,9 +53,9 @@ public class PlayerMovement : MonoBehaviour
 
             // Vertical movement
             moveY = Input.GetAxisRaw("Vertical");
-            if(this.transform.position.y <= -19.02722f)
+            if(this.transform.position.y <= -18.46001f)
             {
-                this.transform.position = new Vector3(this.transform.position.x, -19.02722f, 0);
+                this.transform.position = new Vector3(this.transform.position.x, -18.46001f, 0);
             }
             if(this.transform.position.y >= 18.97278f)
             {

@@ -13,12 +13,12 @@ public class GameManager : MonoBehaviour
 
     private PlayerMovement pm;
 
-    private int playerIndex;
+    [SerializeField]private int playerIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerIndex = 2;
+        // Replace with character select stuff
         SpawnPlayer(playerIndex);
         pm = FindObjectOfType<PlayerMovement>();
         co1 = StartCoroutine(Spawner());

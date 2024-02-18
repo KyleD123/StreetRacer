@@ -575,6 +575,7 @@ MonoBehaviour:
   - {fileID: 4786148000729032979, guid: 5405381583812c843ac12f902af53132, type: 3}
   JerryCanPrefab: {fileID: 1148893212756941759, guid: 526428bf53a31ec488bfe32ab992aad3, type: 3}
   SpeedUpPrefab: {fileID: 2248424467519013541, guid: 35f8065f971f78441b8a61d627fb7c6f, type: 3}
+  playerIndex: 1
 --- !u!4 &755742324
 Transform:
   m_ObjectHideFlags: 0
