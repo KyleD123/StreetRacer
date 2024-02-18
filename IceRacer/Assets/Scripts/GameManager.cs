@@ -15,13 +15,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]private int playerIndex;
 
+    private bool SelectionState;
+    private bool GameState;
+
     // Start is called before the first frame update
     void Start()
     {
-        // Replace with character select stuff
-        SpawnPlayer(playerIndex);
-        pm = FindObjectOfType<PlayerMovement>();
-        co1 = StartCoroutine(Spawner());
+        // Do character select stuff before starting game
+        StartGame();
     }
 
     // Update is called once per frame
@@ -31,6 +32,13 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(Spawner());
         }
+    }
+
+    public void StartGame()
+    {
+        SpawnPlayer(playerIndex);
+        pm = FindObjectOfType<PlayerMovement>();
+        co1 = StartCoroutine(Spawner());
     }
 
     IEnumerator Spawner()

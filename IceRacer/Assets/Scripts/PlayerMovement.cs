@@ -65,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             this.KMpH = 0;
+            moveX = 0;
+            moveY = 0;
         }
 
     }
