@@ -20,12 +20,13 @@ public class SlideBackground : MonoBehaviour
     void Start()
     {
         this.pos1 = this.transform.position;
-        SlideToPosition2();
+        StartCoroutine(StartSlide());
     }
 
-    public void SlideToPosition2()
+    IEnumerator StartSlide()
     {
-        StartCoroutine(Slide1());
+        yield return new WaitForSeconds(timeBeforeSlide);
+        yield return StartCoroutine(Slide1());
     }
 
     IEnumerator Slide1()
