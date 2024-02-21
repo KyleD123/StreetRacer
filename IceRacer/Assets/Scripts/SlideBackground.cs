@@ -45,7 +45,6 @@ public class SlideBackground : MonoBehaviour
         }
 
         gm.Day = false;
-
         yield return new WaitForSeconds(timeBeforeSlide);
 
         yield return StartCoroutine(Slide2());
@@ -68,7 +67,6 @@ public class SlideBackground : MonoBehaviour
 
         gm.Day = true;
         yield return new WaitForSeconds(timeBeforeSlide);
-
         yield return StartCoroutine(Slide1());
     }
 

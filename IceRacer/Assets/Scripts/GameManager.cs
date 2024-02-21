@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject JerryCanPrefab;
     public GameObject SpeedUpPrefab;
     private Coroutine co1;
+    private Coroutine co2;
 
     public GameObject GroundMarkLight;
     public GameObject GroundMarkDark;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     private bool SelectionState;
     private bool GameState;
 
-    public bool Day;
+    public bool Day = true;
 
     [SerializeField] private PowerUpManager PowerUpMan;
 
@@ -39,7 +40,11 @@ public class GameManager : MonoBehaviour
     {
         if(co1 == null)
         {
-            StartCoroutine(Spawner());
+            co1 = StartCoroutine(Spawner());
+        }
+        if(co2 == null)
+        {
+            co2 = StartCoroutine(GroundMarkSpawner());
         }
     }
 
@@ -48,6 +53,7 @@ public class GameManager : MonoBehaviour
         SpawnPlayer(playerIndex);
         pm = FindObjectOfType<PlayerMovement>();
         co1 = StartCoroutine(Spawner());
+        co2 = StartCoroutine(GroundMarkSpawner());
     }
 
     IEnumerator Spawner()
@@ -55,16 +61,6 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         while(true)
         {
-            if(Day)
-            {
-                GameObject mark = SpawnGroundMarkDark();
-                PowerUpMan.PowerUpList.Add(mark);
-            }
-            else
-            {
-                GameObject mark = SpawnGroundMarkLight();
-                PowerUpMan.PowerUpList.Add(mark);
-            }
             float x = Random.Range(55, 70);
             if(pm.PlayerCurrentSpeed <= 0)
             {
@@ -81,6 +77,25 @@ public class GameManager : MonoBehaviour
                 SpawnPowerUp(x,y);
             }
             yield return new WaitForSeconds(3);
+        }
+    }
+
+    IEnumerator GroundMarkSpawner()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(1.5f);
+            if(Day)
+            {
+                GameObject mark = SpawnGroundMarkDark();
+                PowerUpMan.PowerUpList.Add(mark);
+            }
+            else
+            {
+                GameObject mark = SpawnGroundMarkLight();
+                PowerUpMan.PowerUpList.Add(mark);
+            }
+            yield return new WaitForSeconds(1.5f);
         }
     }
 

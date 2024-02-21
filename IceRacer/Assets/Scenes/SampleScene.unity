@@ -828,6 +828,7 @@ MonoBehaviour:
   GroundMarkLight: {fileID: 7322404483511255628, guid: d295beb311a566245895a650e4f3885f, type: 3}
   GroundMarkDark: {fileID: 2477286175449444736, guid: d6ce71d904518ef44ba5feafba093778, type: 3}
   playerIndex: 0
+  Day: 1
   PowerUpMan: {fileID: 0}
 --- !u!4 &755742324
 Transform:
