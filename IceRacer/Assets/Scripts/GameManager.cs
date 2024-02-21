@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private bool SelectionState;
     private bool GameState;
 
+    public bool Day;
+
     [SerializeField] private PowerUpManager PowerUpMan;
 
     // Start is called before the first frame update
@@ -53,7 +55,16 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         while(true)
         {
-            SpawnGroundMarkLight();
+            if(Day)
+            {
+                GameObject mark = SpawnGroundMarkDark();
+                PowerUpMan.PowerUpList.Add(mark);
+            }
+            else
+            {
+                GameObject mark = SpawnGroundMarkLight();
+                PowerUpMan.PowerUpList.Add(mark);
+            }
             float x = Random.Range(55, 70);
             if(pm.PlayerCurrentSpeed <= 0)
             {
@@ -97,18 +108,18 @@ public class GameManager : MonoBehaviour
         return GOReturn;
     }
 
-    public void SpawnGroundMarkLight()
+    public GameObject SpawnGroundMarkLight()
     {
         float y = Random.Range(-16.5f,16.5f);
         float x = 55;
-        Instantiate(GroundMarkLight, new Vector3(x,y,0), Quaternion.identity);
+        return Instantiate(GroundMarkLight, new Vector3(x,y,0), Quaternion.identity);
     }
 
-    public void SpawnGroundMarkDark()
+    public GameObject SpawnGroundMarkDark()
     {
         float y = Random.Range(-16.5f,16.5f);
         float x = 55;
-        Instantiate(GroundMarkDark, new Vector3(x,y,0), Quaternion.identity);
+        return Instantiate(GroundMarkDark, new Vector3(x,y,0), Quaternion.identity);
     }
 
 

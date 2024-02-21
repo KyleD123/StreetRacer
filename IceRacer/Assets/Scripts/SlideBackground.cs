@@ -13,12 +13,14 @@ public class SlideBackground : MonoBehaviour
     private Vector3 pos2 = new Vector3(0,0,0);
     private Vector3 pos3 = new Vector3(-168,0,0);
 
+    private GameManager gm;
 
     public int timeBeforeSlide = 10;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         this.pos1 = this.transform.position;
         StartCoroutine(StartSlide());
     }
@@ -42,6 +44,8 @@ public class SlideBackground : MonoBehaviour
             }
         }
 
+        gm.Day = false;
+
         yield return new WaitForSeconds(timeBeforeSlide);
 
         yield return StartCoroutine(Slide2());
@@ -62,6 +66,7 @@ public class SlideBackground : MonoBehaviour
         
         this.transform.position = pos1;
 
+        gm.Day = true;
         yield return new WaitForSeconds(timeBeforeSlide);
 
         yield return StartCoroutine(Slide1());
