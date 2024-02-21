@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public GameObject SpeedUpPrefab;
     private Coroutine co1;
 
+    public GameObject GroundMarkLight;
+    public GameObject GroundMarkDark;
+
     private PlayerMovement pm;
 
     [SerializeField] private int playerIndex;
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         while(true)
         {
+            SpawnGroundMarkLight();
             float x = Random.Range(55, 70);
             if(pm.PlayerCurrentSpeed <= 0)
             {
@@ -91,6 +95,20 @@ public class GameManager : MonoBehaviour
         }
 
         return GOReturn;
+    }
+
+    public void SpawnGroundMarkLight()
+    {
+        float y = Random.Range(-16.5f,16.5f);
+        float x = 55;
+        Instantiate(GroundMarkLight, new Vector3(x,y,0), Quaternion.identity);
+    }
+
+    public void SpawnGroundMarkDark()
+    {
+        float y = Random.Range(-16.5f,16.5f);
+        float x = 55;
+        Instantiate(GroundMarkDark, new Vector3(x,y,0), Quaternion.identity);
     }
 
 

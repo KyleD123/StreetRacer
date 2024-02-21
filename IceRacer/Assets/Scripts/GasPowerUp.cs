@@ -18,26 +18,26 @@ public class GasPowerUp : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.transform.position += Movement * Speed * Time.deltaTime;
+        //this.transform.position += Movement * Speed * Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.MaxSpeed = pm.PlayerMaxSpeed - 25;
-        PlayerKMpH = pm.PlayerCurrentSpeed;
-        if(PlayerKMpH <= 0)
-        {
-            Movement = new Vector3(0, 0, 0);
-        }
-        else
-        {
-            Movement = new Vector3(-1, 0, 0);
-            if(Speed < MaxSpeed)
-            {
-                Speed += PlayerKMpH/10 * Time.deltaTime;
-            }
-        }
+        // this.MaxSpeed = pm.PlayerMaxSpeed - 25;
+        // PlayerKMpH = pm.PlayerCurrentSpeed;
+        // if(PlayerKMpH <= 0)
+        // {
+        //     Movement = new Vector3(0, 0, 0);
+        // }
+        // else
+        // {
+        //     Movement = new Vector3(-1, 0, 0);
+        //     if(Speed < MaxSpeed)
+        //     {
+        //         Speed += PlayerKMpH/10 * Time.deltaTime;
+        //     }
+        // }
 
         if(this.transform.position.x < -100f || this.transform.position.x > 100f)
         {
