@@ -24,8 +24,8 @@ public class GasPowerUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.MaxSpeed = pm.MaxKMpH - 25;
-        PlayerKMpH = pm.KMpH;
+        this.MaxSpeed = pm.PlayerMaxSpeed - 25;
+        PlayerKMpH = pm.PlayerCurrentSpeed;
         if(PlayerKMpH <= 0)
         {
             Movement = new Vector3(0, 0, 0);

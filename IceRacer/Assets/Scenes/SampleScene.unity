@@ -825,7 +825,8 @@ MonoBehaviour:
   - {fileID: 4786148000729032979, guid: 5405381583812c843ac12f902af53132, type: 3}
   JerryCanPrefab: {fileID: 1148893212756941759, guid: 526428bf53a31ec488bfe32ab992aad3, type: 3}
   SpeedUpPrefab: {fileID: 2248424467519013541, guid: 35f8065f971f78441b8a61d627fb7c6f, type: 3}
-  playerIndex: 2
+  playerIndex: 0
+  PowerUpMan: {fileID: 0}
 --- !u!4 &755742324
 Transform:
   m_ObjectHideFlags: 0
@@ -925,14 +926,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2033651634
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033651636}
+  - component: {fileID: 2033651635}
+  m_Layer: 0
+  m_Name: PowerUpManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2033651635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033651634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd1285bdc4038648a8be021df8f6466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUpList: []
+--- !u!4 &2033651636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033651634}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 755742324}
+  - {fileID: 2033651636}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1494639315}
   - {fileID: 680951043}
   - {fileID: 612958181}
-  - {fileID: 755742324}
   - {fileID: 587459436}

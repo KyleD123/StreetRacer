@@ -1,14 +1,13 @@
-using System.Collections;
 using UnityEngine;
 
 public class SpeedPowerUp : MonoBehaviour
 {
 
-    private PlayerMovement pm;
-    private float Speed = 5.5f;
-    private float MaxSpeed;
-    private Vector3 Movement;
-    private float PlayerKMpH;
+    [SerializeField] private PlayerMovement pm;
+    [SerializeField] private float Speed = 5.5f;
+    [SerializeField] private float MaxPickUpMovementSpeed;
+    [SerializeField] private Vector3 MovementVector;
+    [SerializeField] private float PlayerKMpH;
 
     // Start is called before the first frame update
     void Start()
@@ -18,28 +17,28 @@ public class SpeedPowerUp : MonoBehaviour
 
     void FixedUpdate()
     {
-        this.transform.position += Movement * Speed * Time.deltaTime;
+        // transform.position += MovementVector * Speed * Time.deltaTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        this.MaxSpeed = pm.MaxKMpH - 25;
-        PlayerKMpH = pm.KMpH;
-        if(PlayerKMpH <= 0)
-        {
-            Movement = new Vector3(0, 0, 0);
-        }
-        else
-        {
-            Movement = new Vector3(-1, 0, 0);
-            if(Speed < MaxSpeed)
-            {
-                Speed += PlayerKMpH/10 * Time.deltaTime;
-            }
-        }
+        // MaxPickUpMovementSpeed = pm.PlayerMaxSpeed - 25f;
+        // PlayerKMpH = pm.PlayerCurrentSpeed;
+        // if (PlayerKMpH <= 0)
+        // {
+        //     MovementVector = new Vector3(0, 0, 0);
+        // }
+        // else
+        // {
+        //     MovementVector = new Vector3(-1, 0, 0);
+        //     if (Speed < MaxPickUpMovementSpeed)
+        //     {
+        //         Speed += PlayerKMpH/10 * Time.deltaTime;
+        //     }
+        // }
 
-        if(this.transform.position.x < -100f || this.transform.position.x > 100f)
+        if(transform.position.x < -100f || transform.position.x > 100f)
         {
             Destroy(this.gameObject);
         }

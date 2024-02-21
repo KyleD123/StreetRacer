@@ -99,9 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10e5a14d87dc3e4ba3174c9b6ee1729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pm: {fileID: 0}
+  PlayerKMpH: 0
   KMpH: 55
-  Speed: 5.5
-  MaxSpeed: 0
+  EnemyMovementSpeed: 0
+  MaxEnemySpeed: 40
+  MovementVector: {x: 0, y: 0, z: 0}
 --- !u!50 &-8288613862031272192
 Rigidbody2D:
   serializedVersion: 4

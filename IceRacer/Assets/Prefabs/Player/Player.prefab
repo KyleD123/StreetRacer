@@ -101,10 +101,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42c3b02a41df1df49b7169578b5b975f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  CarSpeedMultiplier: 20
+  VerticalMovementSpeedMarkiplier: 20
+  moveX: 0
+  moveY: 0
+  PlayerCurrentSpeed: 0
+  PlayerMaxSpeed: 60
+  PostionChangeSpeed: 10
   GasSpendRate: 1
-  KMpH: 0
-  MaxKMpH: 60
+  gt: {fileID: 0}
 --- !u!114 &8285609617417975458
 MonoBehaviour:
   m_ObjectHideFlags: 0

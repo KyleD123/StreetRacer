@@ -14,14 +14,17 @@ public class GameManager : MonoBehaviour
 
     private PlayerMovement pm;
 
-    [SerializeField]private int playerIndex;
+    [SerializeField] private int playerIndex;
 
     private bool SelectionState;
     private bool GameState;
 
+    [SerializeField] private PowerUpManager PowerUpMan;
+
     // Start is called before the first frame update
     void Start()
     {
+        PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<PowerUpManager>();
         // Do character select stuff before starting game
         StartGame();
     }
@@ -48,7 +51,7 @@ public class GameManager : MonoBehaviour
         while(true)
         {
             float x = Random.Range(55, 70);
-            if(pm.KMpH <= 0)
+            if(pm.PlayerCurrentSpeed <= 0)
             {
                 x = Random.Range(-60, -54);
             }
@@ -68,28 +71,34 @@ public class GameManager : MonoBehaviour
 
     public GameObject SpawnEnemyCar(float x, float y)
     {
-        int rnd = Random.Range(0,3);
-        Debug.Log(rnd);
+        int rnd = Random.Range(0, EnemyPrefabs.Length);
         return Instantiate(EnemyPrefabs[rnd], new Vector3(x,y,0), Quaternion.identity);
     }
 
     public GameObject SpawnPowerUp(float x, float y)
     {
+        GameObject GOReturn = null;
         float rnd = Random.Range(0,100);
         if(rnd > 50)
         {
-            return Instantiate(JerryCanPrefab, new Vector3(x,y,0), Quaternion.identity);
+            GOReturn = Instantiate(JerryCanPrefab, new Vector3(x,y,0), Quaternion.identity);
+            PowerUpMan.PowerUpList.Add(GOReturn);
         }
         else
         {
-            return Instantiate(SpeedUpPrefab, new Vector3(x,y,0), Quaternion.identity);
+            GOReturn = Instantiate(SpeedUpPrefab, new Vector3(x,y,0), Quaternion.identity);
+            PowerUpMan.PowerUpList.Add(GOReturn);
         }
+
+        return GOReturn;
     }
 
 
     public void SpawnPlayer(int index)
     {
-        Instantiate(PlayerPrefabs[index], new Vector3(-30, 0, 0), Quaternion.identity);
+        GameObject player =  Instantiate(PlayerPrefabs[index], new Vector3(0, 0, 0), Quaternion.identity);
+        player.name = "Player";
+
     }
 
 }
