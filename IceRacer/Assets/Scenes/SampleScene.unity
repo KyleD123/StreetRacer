@@ -1429,9 +1429,9 @@ MonoBehaviour:
   leftBtn: {fileID: 716121522}
   index: 0
   cards:
-  - {fileID: 21300000, guid: c7035a6b4fe3e0d48b4296c55da31c21, type: 3}
-  - {fileID: 21300000, guid: 7d814ffbe08a5604d87a16be5c09769a, type: 3}
-  - {fileID: 21300000, guid: cbb207d2477a29d4fb9d0141a8dcd4d0, type: 3}
+  - {fileID: 21300000, guid: 35cb91ff51f4bf0448c5899dc40eb392, type: 3}
+  - {fileID: 21300000, guid: 33e9fbe646b40ca4a8d051e45360eb86, type: 3}
+  - {fileID: 21300000, guid: e43b2894f70b0214eaf0ff405e682b13, type: 3}
   currentCard: {fileID: 1935886793}
   player: {fileID: 0}
 --- !u!95 &1476960991
@@ -1691,7 +1691,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: c7035a6b4fe3e0d48b4296c55da31c21, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 35cb91ff51f4bf0448c5899dc40eb392, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
