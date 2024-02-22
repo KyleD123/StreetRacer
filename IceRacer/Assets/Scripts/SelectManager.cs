@@ -12,13 +12,14 @@ public class SelectManager : MonoBehaviour
 
     public GameObject currentCard;
 
-    private float startingOffset = -25f;
+    private float startingOffsetX = -26f;
+    private float startingOffsetY = 2;
 
     public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffset,0f,0f), Quaternion.identity);
+        player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffsetX, startingOffsetY,0f), Quaternion.identity);
         player.name = "Player";
     }
 
@@ -30,7 +31,7 @@ public class SelectManager : MonoBehaviour
         }
         index += 1;
         if(index > 2) index = 0;
-        player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffset,0f,0f), Quaternion.identity);
+        player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffsetX,startingOffsetY,0f), Quaternion.identity);
         player.name = "Player";
 
         currentCard.GetComponent<SpriteRenderer>().sprite = cards[index];
@@ -44,7 +45,7 @@ public class SelectManager : MonoBehaviour
         }
         index -= 1;
         if(index < 0) index = 2;
-        player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffset,0f,0f), Quaternion.identity);
+        player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffsetX,startingOffsetY,0f), Quaternion.identity);
         player.name = "Player";
 
         currentCard.GetComponent<SpriteRenderer>().sprite = cards[index];
