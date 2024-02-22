@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,49 +15,46 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-
     public GameObject[] EnemyPrefabs;
     public GameObject[] PlayerPrefabs;
     public GameObject JerryCanPrefab;
     public GameObject SpeedUpPrefab;
     private Coroutine co1;
     private Coroutine co2;
-
     public GameObject GroundMarkLight1, GroundMarkLight2;
     public GameObject GroundMarkDark1, GroundMarkDark2;
-
     private PlayerMovement pm;
-
     [SerializeField] private int playerIndex;
-
     private bool SelectionState;
-
     public bool Day = true;
-
     [SerializeField] private MoveableObjectManager PowerUpMan;
-
     [SerializeField] private float GroundSpawnRate = 0.25f;
-
     public GameState gs;
-
-    public Button driveBtn;
-
+    public GameObject driveBtn, rightBtn, leftBtn;
+    private bool rightPressed = false;
+    private bool leftPressed = false;
     public SelectManager sm;
+    [SerializeField] private Sprite[] btnSprites;
+
+    [SerializeField] private Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
         PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<MoveableObjectManager>();
-
         gs = GameState.SelectScreen;
-
-        driveBtn.onClick.AddListener(SelectPlayerCar);
+        driveBtn.GetComponent<Button>().onClick.AddListener(SelectPlayerCar);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(gs == GameState.GamePlay)
+        if (gs == GameState.SelectScreen)
+        {
+            SelectScreenInput();
+        }
+
+        if (gs == GameState.GamePlay)
         {
             if(co1 == null)
             {
@@ -66,6 +64,49 @@ public class GameManager : MonoBehaviour
             {
                 co2 = StartCoroutine(GroundMarkSpawner());
             }
+        }
+    }
+
+    private void SelectScreenInput()
+    {
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Keypad6))
+        {
+            rightBtn.GetComponent<Button>().onClick.Invoke();
+            rightPressed = true;
+        }
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.Keypad6)) rightPressed = false;
+
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Keypad4))
+        {
+            leftBtn.GetComponent<Button>().onClick.Invoke();
+            leftPressed = true;
+        }
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.Keypad4)) leftPressed = false;
+
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyUp(KeyCode.Keypad5))
+        { driveBtn.GetComponent<Button>().onClick.Invoke(); }
+
+        UpdateButtonImage();
+    }
+
+    void UpdateButtonImage()
+    {
+        if (rightPressed)
+        {
+            rightBtn.GetComponent<Image>().sprite = btnSprites[3];
+        }
+        else
+        {
+            rightBtn.GetComponent<Image>().sprite = btnSprites[2];
+        }
+
+        if (leftPressed)
+        {
+            leftBtn.GetComponent<Image>().sprite = btnSprites[1];
+        }
+        else
+        {
+            leftBtn.GetComponent<Image>().sprite = btnSprites[0];
         }
     }
 
@@ -80,15 +121,20 @@ public class GameManager : MonoBehaviour
 
     public void SelectPlayerCar()
     {
+        animator.SetBool("SlideSelect", true);
+
         playerIndex = sm.SelectCar();
         StartCoroutine(CountDown());
+    }
+
+    public void DisableSelectScreen()
+    {
         sm.gameObject.SetActive(false);
     }
 
 
     IEnumerator CountDown()
     {
-        
         yield return new WaitForSeconds(3);
         StartGame();
     }
