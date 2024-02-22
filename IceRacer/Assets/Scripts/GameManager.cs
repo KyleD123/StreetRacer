@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    public bool carSelected = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,22 +71,25 @@ public class GameManager : MonoBehaviour
 
     private void SelectScreenInput()
     {
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Keypad6))
+        if (!carSelected && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Keypad6)))
         {
             rightBtn.GetComponent<Button>().onClick.Invoke();
             rightPressed = true;
         }
-        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.Keypad6)) rightPressed = false;
+        if (!carSelected && (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.Keypad6))) rightPressed = false;
 
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Keypad4))
+        if (!carSelected && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Keypad4)))
         {
             leftBtn.GetComponent<Button>().onClick.Invoke();
             leftPressed = true;
         }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.Keypad4)) leftPressed = false;
+        if (!carSelected && (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.Keypad4))) leftPressed = false;
 
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyUp(KeyCode.Keypad5))
-        { driveBtn.GetComponent<Button>().onClick.Invoke(); }
+        if (!carSelected && (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyUp(KeyCode.Keypad5)))
+        { 
+            carSelected = true;
+            driveBtn.GetComponent<Button>().onClick.Invoke(); 
+        }
 
         UpdateButtonImage();
     }
@@ -121,9 +126,8 @@ public class GameManager : MonoBehaviour
 
     public void SelectPlayerCar()
     {
-        animator.SetBool("SlideSelect", true);
-
         playerIndex = sm.SelectCar();
+        animator.SetBool("SlideSelect", true);
         StartCoroutine(CountDown());
     }
 
