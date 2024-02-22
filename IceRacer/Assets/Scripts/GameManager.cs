@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    TitleScreen,
+    SelectScreen,
+    GamePlay,
+    Pause,
+    EndScreen
+}
+
 public class GameManager : MonoBehaviour
 {
 
@@ -21,7 +30,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int playerIndex;
 
     private bool SelectionState;
-    private bool GameState;
 
     public bool Day = true;
 
@@ -29,33 +37,60 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float GroundSpawnRate = 0.25f;
 
+    public GameState gs;
+
+    public Button driveBtn;
+
+    public SelectManager sm;
+
     // Start is called before the first frame update
     void Start()
     {
         PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<MoveableObjectManager>();
-        // Do character select stuff before starting game
-        StartGame();
+
+        gs = GameState.SelectScreen;
+
+        driveBtn.onClick.AddListener(SelectPlayerCar);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(co1 == null)
+        if(gs == GameState.GamePlay)
         {
-            co1 = StartCoroutine(Spawner());
-        }
-        if(co2 == null)
-        {
-            co2 = StartCoroutine(GroundMarkSpawner());
+            if(co1 == null)
+            {
+                co1 = StartCoroutine(Spawner());
+            }
+            if(co2 == null)
+            {
+                co2 = StartCoroutine(GroundMarkSpawner());
+            }
         }
     }
 
     public void StartGame()
     {
-        SpawnPlayer(playerIndex);
+        gs = GameState.GamePlay;
+        //SpawnPlayer(playerIndex);
         pm = FindObjectOfType<PlayerMovement>();
         co1 = StartCoroutine(Spawner());
         co2 = StartCoroutine(GroundMarkSpawner());
+    }
+
+    public void SelectPlayerCar()
+    {
+        playerIndex = sm.SelectCar();
+        StartCoroutine(CountDown());
+        sm.gameObject.SetActive(false);
+    }
+
+
+    IEnumerator CountDown()
+    {
+        
+        yield return new WaitForSeconds(3);
+        StartGame();
     }
 
     IEnumerator Spawner()

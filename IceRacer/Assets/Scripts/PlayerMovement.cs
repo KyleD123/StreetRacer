@@ -15,11 +15,13 @@ public class PlayerMovement : MonoBehaviour
     public float PlayerMaxSpeed;
     [SerializeField] private float PostionChangeSpeed = 0.2f;
 
+    private GameManager gm;
     
     // Start is called before the first frame update
     void Start()
     {
         gt = this.GetComponent<GasTank>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void FixedUpdate()
@@ -30,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void AlterPlayerSpeed()
     {
-        if (gt.CurrentGas > 0)
+        if (gt.CurrentGas > 0 && gm.gs == GameState.GamePlay)
         {
             // Speed stuff (kinda whack tbh)
             moveX = Input.GetAxisRaw("Horizontal");
@@ -71,18 +73,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void AlterPlayerPosition()
     {
-        // Vertical movement
-        if (PlayerCurrentSpeed > 0)
+        if(gm.gs == GameState.GamePlay)
         {
-            moveY = Input.GetAxisRaw("Vertical");
-            Vector3 movement = new Vector3(0, moveY, 0).normalized;
-            transform.position += movement * VerticalMovementSpeedMarkiplier * Time.deltaTime;
-        }
+            // Vertical movement
+            if (PlayerCurrentSpeed > 0)
+            {
+                moveY = Input.GetAxisRaw("Vertical");
+                Vector3 movement = new Vector3(0, moveY, 0).normalized;
+                transform.position += movement * VerticalMovementSpeedMarkiplier * Time.deltaTime;
+            }
 
-        // Horizontal movement
-        float normalizedPos = (PlayerCurrentSpeed / PlayerMaxSpeed) * -30f;
-        float xPos = Mathf.Clamp(normalizedPos, -30f, 0);
-        gameObject.transform.position = new Vector3(xPos, gameObject.transform.position.y, 0f);
+            // Horizontal movement
+            float normalizedPos = (PlayerCurrentSpeed / PlayerMaxSpeed) * -30f;
+            float xPos = Mathf.Clamp(normalizedPos, -30f, 0);
+            gameObject.transform.position = new Vector3(xPos, gameObject.transform.position.y, 0f);
+        }
     }
 
     /// <summary>

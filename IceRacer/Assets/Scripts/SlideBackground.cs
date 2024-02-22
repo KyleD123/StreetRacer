@@ -17,12 +17,21 @@ public class SlideBackground : MonoBehaviour
 
     public int timeBeforeSlide = 10;
 
+    public Coroutine co;
+
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         this.pos1 = this.transform.position;
-        StartCoroutine(StartSlide());
+    }
+
+    void Update()
+    {
+        if(gm.gs == GameState.GamePlay && co == null)
+        {
+            co = StartCoroutine(StartSlide());
+        }
     }
 
     IEnumerator StartSlide()

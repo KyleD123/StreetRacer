@@ -19,7 +19,7 @@ public class MoveableObjectManager : MonoBehaviour
     {
         if (pm == null) 
         {
-            pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
+            pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         }
         else
         {
