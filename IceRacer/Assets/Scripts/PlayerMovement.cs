@@ -1,24 +1,21 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float CarSpeedMultiplier;
-
-    [SerializeField] private float VerticalMovementSpeedMarkiplier = 2f;
+    [SerializeField] private GasTank gt;
     [SerializeField] private float moveX;
     [SerializeField] private float moveY;
-
     public float PlayerCurrentSpeed;
+    [Space(5)]
+    [SerializeField] private float VerticalMovementSpeedMarkiplier = 2f;
+    public float CarSpeedMultiplier;
+    [Space(5)]
+    public int GasSpendRate = 1;
     public float PlayerMaxSpeed;
-
     [SerializeField] private float PostionChangeSpeed = 0.2f;
 
-    public int GasSpendRate = 1;
-     [SerializeField] private GasTank gt;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -75,25 +72,17 @@ public class PlayerMovement : MonoBehaviour
     private void AlterPlayerPosition()
     {
         // Vertical movement
-        moveY = Input.GetAxisRaw("Vertical");
-        Vector3 movement = new Vector3(0, moveY, 0).normalized;
-        transform.position += movement * VerticalMovementSpeedMarkiplier * Time.deltaTime;
-
-        float normalizeSpeed = (PlayerCurrentSpeed / PlayerMaxSpeed) * -30f;
-        if (normalizeSpeed > 0) normalizeSpeed = 0;
-
-        Vector3 newPos = Vector3.Lerp(transform.position, new Vector3(normalizeSpeed, transform.position.y, 0f), 0.1f);
-        transform.position = newPos;
+        if (PlayerCurrentSpeed > 0)
+        {
+            moveY = Input.GetAxisRaw("Vertical");
+            Vector3 movement = new Vector3(0, moveY, 0).normalized;
+            transform.position += movement * VerticalMovementSpeedMarkiplier * Time.deltaTime;
+        }
 
         // Horizontal movement
-        // if (Input.GetAxisRaw("Horizontal") > 0 && transform.position.x > -30f && gt.CurrentGas > 0) 
-        // { transform.position -= new Vector3(PostionChangeSpeed, 0f, 0f); }
-
-        // else if (Input.GetAxisRaw("Horizontal") < 0 && transform.position.x < 0) 
-        // { transform.position += new Vector3(PostionChangeSpeed * 2, 0f, 0f); }
-
-        // else 
-        // { if (transform.position.x < 0) transform.position += new Vector3(PostionChangeSpeed / 2f, 0f, 0f); }
+        float normalizedPos = (PlayerCurrentSpeed / PlayerMaxSpeed) * -30f;
+        float xPos = Mathf.Clamp(normalizedPos, -30f, 0);
+        gameObject.transform.position = new Vector3(xPos, gameObject.transform.position.y, 0f);
     }
 
     /// <summary>

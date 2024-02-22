@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     private Coroutine co1;
     private Coroutine co2;
 
-    public GameObject GroundMarkLight;
-    public GameObject GroundMarkDark;
+    public GameObject GroundMarkLight1, GroundMarkLight2;
+    public GameObject GroundMarkDark1, GroundMarkDark2;
 
     private PlayerMovement pm;
 
@@ -25,12 +25,14 @@ public class GameManager : MonoBehaviour
 
     public bool Day = true;
 
-    [SerializeField] private PowerUpManager PowerUpMan;
+    [SerializeField] private MoveableObjectManager PowerUpMan;
+
+    [SerializeField] private float GroundSpawnRate = 0.25f;
 
     // Start is called before the first frame update
     void Start()
     {
-        PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<PowerUpManager>();
+        PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<MoveableObjectManager>();
         // Do character select stuff before starting game
         StartGame();
     }
@@ -84,18 +86,25 @@ public class GameManager : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(GroundSpawnRate);
             if(Day)
             {
-                GameObject mark = SpawnGroundMarkDark();
-                PowerUpMan.PowerUpList.Add(mark);
+                if (pm.PlayerCurrentSpeed > 5f)
+                {
+                    GameObject mark = SpawnGroundMarkDark();
+                    PowerUpMan.MoveableObjectList.Add(mark);
+                }
+
             }
             else
             {
-                GameObject mark = SpawnGroundMarkLight();
-                PowerUpMan.PowerUpList.Add(mark);
+                if (pm.PlayerCurrentSpeed > 5f)
+                {
+                    GameObject mark = SpawnGroundMarkLight();
+                    PowerUpMan.MoveableObjectList.Add(mark);
+                }
             }
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(GroundSpawnRate);
         }
     }
 
@@ -112,12 +121,12 @@ public class GameManager : MonoBehaviour
         if(rnd > 50)
         {
             GOReturn = Instantiate(JerryCanPrefab, new Vector3(x,y,0), Quaternion.identity);
-            PowerUpMan.PowerUpList.Add(GOReturn);
+            PowerUpMan.MoveableObjectList.Add(GOReturn);
         }
         else
         {
             GOReturn = Instantiate(SpeedUpPrefab, new Vector3(x,y,0), Quaternion.identity);
-            PowerUpMan.PowerUpList.Add(GOReturn);
+            PowerUpMan.MoveableObjectList.Add(GOReturn);
         }
 
         return GOReturn;
@@ -127,14 +136,21 @@ public class GameManager : MonoBehaviour
     {
         float y = Random.Range(-16.5f,16.5f);
         float x = 55;
-        return Instantiate(GroundMarkLight, new Vector3(x,y,0), Quaternion.identity);
+
+        float rnd = Random.Range(1, 100);
+        if (rnd < 50) return Instantiate(GroundMarkLight1, new Vector3(x,y,0), Quaternion.identity);
+        return Instantiate(GroundMarkLight2, new Vector3(x,y,0), Quaternion.identity);
+        
     }
 
     public GameObject SpawnGroundMarkDark()
     {
         float y = Random.Range(-16.5f,16.5f);
         float x = 55;
-        return Instantiate(GroundMarkDark, new Vector3(x,y,0), Quaternion.identity);
+
+        float rnd = Random.Range(1, 100);
+        if (rnd < 50) return Instantiate(GroundMarkDark1, new Vector3(x,y,0), Quaternion.identity);
+        return Instantiate(GroundMarkDark2, new Vector3(x,y,0), Quaternion.identity);
     }
 
 

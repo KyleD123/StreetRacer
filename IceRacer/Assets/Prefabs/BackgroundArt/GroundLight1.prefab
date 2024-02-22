@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3672400938666309225}
   - component: {fileID: 6398534757119801538}
+  - component: {fileID: -2585728765172160269}
   m_Layer: 0
-  m_Name: GroundLight
+  m_Name: GroundLight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,3 +85,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-2585728765172160269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7322404483511255628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2f4e8bb50c49a4090c60fd2ace73f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
