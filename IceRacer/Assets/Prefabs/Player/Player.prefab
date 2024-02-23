@@ -110,6 +110,9 @@ MonoBehaviour:
   GasSpendRate: 1
   PlayerMaxSpeed: 60
   PostionChangeSpeed: 10
+  FAMILY: 0
+  carTypeMarkiplier: 1
+  anime: {fileID: 0}
 --- !u!114 &8285609617417975458
 MonoBehaviour:
   m_ObjectHideFlags: 0

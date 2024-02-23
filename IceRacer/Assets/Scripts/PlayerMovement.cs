@@ -19,12 +19,15 @@ public class PlayerMovement : MonoBehaviour
     public float carTypeMarkiplier = 1;
 
     private GameManager gm;
+
+    public Animator anime;
     
     // Start is called before the first frame update
     void Start()
     {
         gt = this.GetComponent<GasTank>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        anime = gameObject.GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -73,7 +76,17 @@ public class PlayerMovement : MonoBehaviour
             if (PlayerCurrentSpeed > 0) PlayerCurrentSpeed -= CarSpeedMultiplier / 2 * Time.deltaTime;
             moveX = 0;
             moveY = 0;
+            if(!gm.gameOver && gm.gs == GameState.GamePlay)
+            {
+                StopCar();
+            }
         }
+    }
+
+    private void StopCar()
+    {
+        anime.SetBool("GasEmpty", true);
+        gm.gameOver = true;
     }
 
     private void AlterPlayerPosition()
@@ -143,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
     public void IncreaseMaxKMpH(float amount)
     {
         FAMILY = true;
-
+        anime.SetBool("SpeedUp", true);
         this.PlayerMaxSpeed += amount;
         this.PlayerCurrentSpeed = this.PlayerMaxSpeed;
         IncreaseGasSpendRate(2);
@@ -158,8 +171,8 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator DecreaseMaxKMpH(float amount)
     {
         FAMILY = false;
-
         yield return new WaitForSeconds(7);
+        anime.SetBool("SpeedUp", false);
         this.PlayerMaxSpeed -= amount;
         this.PlayerCurrentSpeed = this.PlayerMaxSpeed;
     }

@@ -1445,6 +1445,7 @@ MonoBehaviour:
   animator: {fileID: 1476960991}
   carSelected: 0
   kmTraveled: 0
+  gameOver: 0
 --- !u!4 &755742324
 Transform:
   m_ObjectHideFlags: 0

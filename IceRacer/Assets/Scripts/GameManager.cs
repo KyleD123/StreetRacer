@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -39,6 +38,10 @@ public class GameManager : MonoBehaviour
     public bool carSelected = false;
     private Text countDown;
     public float kmTraveled = 0;
+    public bool gameOver = false;
+
+    //REMEMBER ME
+    public int playerKills = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -152,6 +155,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CountDown()
     {
+        pm.anime.SetTrigger("StartGame");
         countDown = GameObject.Find("Drive!").GetComponent<Text>();
         float timeSpent = 0f;
         while(pm.transform.position.x < 0f)
@@ -187,10 +191,11 @@ public class GameManager : MonoBehaviour
             float CarOrPowerUp = Random.Range(0,100);
             if(CarOrPowerUp >= 25 && !pm.FAMILY)
             {
-                SpawnEnemyCar(x,y);    
+                SpawnEnemyCar(x,y);
             }
             else
             {
+                x = Mathf.Abs(x);
                 SpawnPowerUp(x,y);
             }
             yield return new WaitForSeconds(3);

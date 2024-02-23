@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8290985868455313236}
   - component: {fileID: -8288613862031272192}
   - component: {fileID: 6897356396211868509}
+  - component: {fileID: 5564898838111973250}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 0ec02826c2e267043a8cc110a70d744b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
   MaxEnemySpeed: 40
   MovementVector: {x: 0, y: 0, z: 0}
   gasDamange: 1
+  anime: {fileID: 0}
 --- !u!50 &-8288613862031272192
 Rigidbody2D:
   serializedVersion: 4
@@ -165,7 +167,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 2.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -204,3 +206,24 @@ PolygonCollider2D:
       - {x: 7.014246, y: 2.6097283}
       - {x: 7.0523224, y: 3.5217395}
   m_UseDelaunayMesh: 0
+--- !u!95 &5564898838111973250
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2305354696559090056}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd82b09ced62bad479477ef00e44b322, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
