@@ -37,6 +37,10 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 3010826154664284282, guid: 4b9babd6132b36c4085fa9f2f55d63ef, type: 3}
+      propertyPath: carTypeMarkiplier
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3010826154664284282, guid: 4b9babd6132b36c4085fa9f2f55d63ef, type: 3}
       propertyPath: PostionChangeSpeed
       value: 0.4
       objectReference: {fileID: 0}

@@ -15,12 +15,16 @@ public class SelectManager : MonoBehaviour
     private float startingOffsetX = -26f;
     private float startingOffsetY = 2;
 
+    [SerializeField] private GameObject HUDReference;
+
     public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffsetX, startingOffsetY,0f), Quaternion.identity);
         player.name = "Player";
+
+        gm.pm = player.GetComponent<PlayerMovement>();
     }
 
     public void MoveToNext()
@@ -33,6 +37,8 @@ public class SelectManager : MonoBehaviour
         if(index > 2) index = 0;
         player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffsetX,startingOffsetY,0f), Quaternion.identity);
         player.name = "Player";
+
+        gm.pm = player.GetComponent<PlayerMovement>();
 
         currentCard.GetComponent<SpriteRenderer>().sprite = cards[index];
     }
@@ -48,11 +54,20 @@ public class SelectManager : MonoBehaviour
         player = Instantiate(gm.PlayerPrefabs[index], new Vector3(startingOffsetX,startingOffsetY,0f), Quaternion.identity);
         player.name = "Player";
 
+        gm.pm = player.GetComponent<PlayerMovement>();
+
         currentCard.GetComponent<SpriteRenderer>().sprite = cards[index];
     }
 
     public int SelectCar()
     {
         return index;
+    }
+
+    public void StartOtherStartMethod()
+    {
+        GameObject.Find("SelectScreen").SetActive(false);
+        HUDReference.SetActive(true);
+        gm.StartSelectCoroutine();
     }
 }

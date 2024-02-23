@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public int GasSpendRate = 1;
     public float PlayerMaxSpeed;
     [SerializeField] private float PostionChangeSpeed = 0.2f;
+    public bool FAMILY = false;
+
+    public float carTypeMarkiplier = 1;
 
     private GameManager gm;
     
@@ -62,10 +65,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 this.transform.position = new Vector3(this.transform.position.x, 18.97278f, 0);
             }
+
+            if (PlayerCurrentSpeed < 0) PlayerCurrentSpeed = 0;
         }
         else
         {
-            this.PlayerCurrentSpeed = 0;
+            if (PlayerCurrentSpeed > 0) PlayerCurrentSpeed -= CarSpeedMultiplier / 2 * Time.deltaTime;
             moveX = 0;
             moveY = 0;
         }
@@ -80,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 moveY = Input.GetAxisRaw("Vertical");
                 Vector3 movement = new Vector3(0, moveY, 0).normalized;
-                transform.position += movement * VerticalMovementSpeedMarkiplier * Time.deltaTime;
+                transform.position += movement * VerticalMovementSpeedMarkiplier * carTypeMarkiplier * Time.deltaTime;
             }
 
             // Horizontal movement
@@ -100,6 +105,15 @@ public class PlayerMovement : MonoBehaviour
     }
 
     /// <summary>
+    /// This decreases the amount of gas the car currently has
+    /// </summary>
+    /// <param name="amount"></param>
+    public void DecreaseGas(int amount)
+    {
+        this.gameObject.GetComponent<GasTank>().DecreaseGas(amount);
+    }
+
+    /// <summary>
     /// This increases the amount of gas spent 
     /// </summary>
     /// <param name="amount"></param>
@@ -108,6 +122,8 @@ public class PlayerMovement : MonoBehaviour
         this.GasSpendRate += amount;
         StartCoroutine(DecreaseGasSpendRate(amount));
     }
+
+    
 
     /// <summary>
     /// Decreases the amount of gas spent
@@ -126,6 +142,8 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="amount"></param>
     public void IncreaseMaxKMpH(float amount)
     {
+        FAMILY = true;
+
         this.PlayerMaxSpeed += amount;
         this.PlayerCurrentSpeed = this.PlayerMaxSpeed;
         IncreaseGasSpendRate(2);
@@ -139,6 +157,8 @@ public class PlayerMovement : MonoBehaviour
     /// <returns></returns>
     private IEnumerator DecreaseMaxKMpH(float amount)
     {
+        FAMILY = false;
+
         yield return new WaitForSeconds(7);
         this.PlayerMaxSpeed -= amount;
         this.PlayerCurrentSpeed = this.PlayerMaxSpeed;

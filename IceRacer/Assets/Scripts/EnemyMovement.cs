@@ -1,7 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -13,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public float MaxEnemySpeed;
     [SerializeField] private Vector3 MovementVector;
     private float SpeedThreshhold;
+
+    [SerializeField] int gasDamange = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -61,9 +59,15 @@ public class EnemyMovement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // ADD EXPLOSTION ANIMATION
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            pm.DecreaseGas(gasDamange);
+            Destroy(gameObject);
         }
     }
 }
