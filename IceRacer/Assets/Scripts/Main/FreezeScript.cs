@@ -6,13 +6,22 @@ public class FreezeScript : MonoBehaviour
     [SerializeField] float reactionTime = 3f;
     private float currentCount = 0f;
     private bool itsFreezingTime = false;
-    private PlayerMovement pm;
+    [SerializeField]private PlayerMovement pm;
+
+    private Vector2 StopSignEndPosition = new Vector2(23,-1);
+
+    private Animator anime;
+
+    void Start()
+    {
+        anime = GetComponent<Animator>();
+    }
 
     void Update()
     {
-        if (!pm)
+        if(!pm)
         {
-            GameObject.Find("Player");
+            pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         }
     }
 
@@ -23,6 +32,7 @@ public class FreezeScript : MonoBehaviour
 
     IEnumerator FreezeCounter()
     {
+        anime.SetTrigger("SlideIn");
         currentCount = 0;
         itsFreezingTime = true;
         // Count until reaction time.
@@ -35,6 +45,8 @@ public class FreezeScript : MonoBehaviour
             { itsFreezingTime = false; break; }
             yield return null;
         }
+        
+        anime.SetTrigger("SlideOut");
 
         // Spawn the fuckin cops and stop other shit cuz its freezing time.
         // The cops then freezed all over

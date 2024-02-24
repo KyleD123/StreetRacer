@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class SelectManager : MonoBehaviour
 {
     public GameManager gm;
+    public GameObject fence;
     public Button rightBtn;
     public Button leftBtn;
     public int index = 0;
@@ -18,6 +19,7 @@ public class SelectManager : MonoBehaviour
     [SerializeField] private GameObject HUDReference;
 
     public GameObject player;
+    public GameObject sunMoon;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,8 @@ public class SelectManager : MonoBehaviour
     public void StartOtherStartMethod()
     {
         GameObject.Find("SelectScreen").SetActive(false);
+        sunMoon.SetActive(true);
+        fence.SetActive(true);
         HUDReference.SetActive(true);
         gm.StartSelectCoroutine();
     }

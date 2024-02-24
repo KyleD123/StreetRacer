@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -53,13 +54,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // DEBUG ----
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            stopSign.GetComponent<FreezeScript>().CallFreezeEvent();
-        }
-        // ----------
-
 
         if (gs == GameState.SelectScreen)
         {
@@ -191,23 +185,35 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         while(true)
         {
-            float x = Random.Range(55, 70);
-            if(pm.PlayerCurrentSpeed <= 0)
+            if(!gameOver)
             {
-                x = Random.Range(-60, -54);
-            }
-            float y = Random.Range(-18, 18);
-            float CarOrPowerUp = Random.Range(0,100);
-            if(CarOrPowerUp >= 25 && !pm.FAMILY)
-            {
-                SpawnEnemyCar(x,y);
+                float x = Random.Range(55, 70);
+                if(pm.PlayerCurrentSpeed <= 0)
+                {
+                    x = Random.Range(-60, -54);
+                }
+                float y = Random.Range(-18, 18);
+                float CarOrPowerUp = Random.Range(0,100);
+                if(CarOrPowerUp >= 25 && !pm.FAMILY)
+                {
+                    SpawnEnemyCar(x,y);
+                }
+                else
+                {
+                    x = Mathf.Abs(x);
+                    SpawnPowerUp(x,y);
+                }
+                float stopChance = Random.Range(0,100);
+                if(stopChance > 84)
+                {
+                    stopSign.GetComponent<FreezeScript>().CallFreezeEvent();
+                }
+                yield return new WaitForSeconds(3);
             }
             else
             {
-                x = Mathf.Abs(x);
-                SpawnPowerUp(x,y);
+                yield break;
             }
-            yield return new WaitForSeconds(3);
         }
     }
 
