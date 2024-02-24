@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     public int playerKills = 0;
     public Sprite driveButtonSelected;
     public GameObject stopSign;
+    public bool failedToFreeze = false;
 
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,11 @@ public class GameManager : MonoBehaviour
             {
                 co2 = StartCoroutine(GroundMarkSpawner());
             }
+        }
+
+        if(gs == GameState.EndScreen)
+        {
+            // stuff
         }
     }
 
@@ -204,7 +210,7 @@ public class GameManager : MonoBehaviour
                     SpawnPowerUp(x,y);
                 }
                 float stopChance = Random.Range(0,100);
-                if(stopChance > 84)
+                if(stopChance > 84 && !failedToFreeze)
                 {
                     stopSign.GetComponent<FreezeScript>().CallFreezeEvent();
                 }

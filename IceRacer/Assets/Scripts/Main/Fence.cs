@@ -7,6 +7,7 @@ public class Fence : MonoBehaviour
     private Vector3 StartPosition = new Vector3(960,24f,0);
 
     private PlayerMovement pm;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +18,14 @@ public class Fence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        transform.position += new Vector3(-pm.PlayerCurrentSpeed/250, 0, 0);
-
-        if(transform.position.x <= -559)
+        if(pm)
         {
-            transform.position = StartPosition;
+            transform.position += new Vector3(-pm.PlayerCurrentSpeed/250, 0, 0);
+
+            if(transform.position.x <= -559)
+            {
+                transform.position = StartPosition;
+            }
         }
     }
 

@@ -125,6 +125,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 StopCar();
             }
+            if(PlayerCurrentSpeed <= 0 && gm.gameOver)
+            {
+                PlayerCurrentSpeed -= CarSpeedMultiplier * 2 * Time.deltaTime;
+                gm.gs = GameState.EndScreen;
+            }
         }
     }
 
@@ -228,4 +233,10 @@ public class PlayerMovement : MonoBehaviour
     {
         
     }
+
+    public void HitByCop()
+    {
+        Destroy(this.gameObject);
+    }
+
 }

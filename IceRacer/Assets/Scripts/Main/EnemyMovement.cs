@@ -12,10 +12,12 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] int gasDamange = 1;
     [SerializeField] Animator anime;
     public bool dead = false;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
+        gm = gm = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         anime = gameObject.GetComponent<Animator>();
         SpeedThreshhold = pm.PlayerMaxSpeed / 2f;
@@ -35,10 +37,13 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CalculateEnemySpeed();
-        if(transform.position.x < -200f || this.transform.position.x > 200f)
+        if(gm.gs != GameState.EndScreen)
         {
-            Destroy(this.gameObject);
+            CalculateEnemySpeed();
+            if(transform.position.x < -200f || this.transform.position.x > 200f)
+            {
+                Destroy(this.gameObject);
+            }
         }
         
     }
@@ -63,13 +68,14 @@ public class EnemyMovement : MonoBehaviour
         // ADD EXPLOSTION ANIMATION
         if (collision.gameObject.tag == "Enemy")
         {
-            pm.DecreaseGas(gasDamange);
+            transform.GetChild(0).gameObject.SetActive(false);
             anime.SetBool("Dead", true);
             dead = true;
         }
 
         if (collision.gameObject.tag == "Player")
         {
+            transform.GetChild(0).gameObject.SetActive(false);
             GameObject.Find("GameManager").GetComponent<GameManager>().playerKills++;
             pm.DecreaseGas(gasDamange);
             anime.SetBool("Dead", true);

@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Main\SpeedPowerUp.cs" />
     <Compile Include="Assets\Scripts\Main\GroundMarker.cs" />
+    <Compile Include="Assets\Scripts\Main\Police.cs" />
     <Compile Include="Assets\Scripts\TitleScreen\TitleScreenController.cs" />
     <Compile Include="Assets\Scripts\Main\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Main\MoveableObjectManager.cs" />

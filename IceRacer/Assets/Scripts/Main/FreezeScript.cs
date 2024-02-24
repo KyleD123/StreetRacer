@@ -7,21 +7,27 @@ public class FreezeScript : MonoBehaviour
     private float currentCount = 0f;
     private bool itsFreezingTime = false;
     [SerializeField]private PlayerMovement pm;
+    public GameObject policePrefab;
 
     private Vector2 StopSignEndPosition = new Vector2(23,-1);
 
     private Animator anime;
+    private GameManager gm;
 
     void Start()
     {
+        gm = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         anime = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if(!pm)
+        if(gm.gs != GameState.EndScreen)
         {
-            pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+            if(!pm)
+            {
+                pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+            }
         }
     }
 
@@ -52,11 +58,12 @@ public class FreezeScript : MonoBehaviour
         // The cops then freezed all over
         if (itsFreezingTime)
         {
-            // Stuff that will happen if they dont stop
+            gm.failedToFreeze = true;
+            Instantiate(policePrefab, new Vector3(70f, 0f, 0f), Quaternion.identity);
         }
         else
         {
-            // Stuff that will happen if they do stop
+            gm.failedToFreeze = false;
             pm.PlayerCurrentSpeed = 0;
         }
         

@@ -8,35 +8,41 @@ public class MoveableObjectManager : MonoBehaviour
 
     private PlayerMovement pm;
     private float currentMovementSpeed;
+    private GameManager gm;
 
     void Start()
     {
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         MoveableObjectList = new List<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pm == null) 
+        if(gm.gs == GameState.GamePlay)
         {
-            pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-        }
-        else
-        {
-            // Clear nulls
-            MoveableObjectList.RemoveAll(item => item == null);
-
-            foreach(GameObject Object in MoveableObjectList)
+            if (pm == null) 
             {
-                if (Object == null) { MoveableObjectList.Remove(Object); }
-                else
+                pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+            }
+            else
+            {
+                // Clear nulls
+                MoveableObjectList.RemoveAll(item => item == null);
+
+                foreach(GameObject Object in MoveableObjectList)
                 {
-                    float CurrentPMSpeed = pm.PlayerCurrentSpeed;
-                    currentMovementSpeed = -CurrentPMSpeed * 3f;
-                    if (currentMovementSpeed > 0) currentMovementSpeed = 0;
-                    Object.transform.position += Vector3.right * currentMovementSpeed * Time.deltaTime;
+                    if (Object == null) { MoveableObjectList.Remove(Object); }
+                    else
+                    {
+                        float CurrentPMSpeed = pm.PlayerCurrentSpeed;
+                        currentMovementSpeed = -CurrentPMSpeed * 3f;
+                        if (currentMovementSpeed > 0) currentMovementSpeed = 0;
+                        Object.transform.position += Vector3.right * currentMovementSpeed * Time.deltaTime;
+                    }
                 }
             }
         }
     }
+    
 }
