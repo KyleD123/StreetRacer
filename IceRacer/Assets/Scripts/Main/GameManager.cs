@@ -1,15 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public enum GameState
 {
-    TitleScreen,
+    None,
     SelectScreen,
     GamePlay,
-    Pause,
     EndScreen
 }
 
@@ -37,26 +35,32 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite[] btnSprites;
     [SerializeField] private Animator animator;
     public bool carSelected = false;
-    private TMP_Text countDown;
+    private TMP_Text countDownDay, countDownNight;
     public float kmTraveled = 0;
     public bool gameOver = false;
-
-    //REMEMBER ME
     public int playerKills = 0;
-
     public Sprite driveButtonSelected;
+    public GameObject stopSign;
 
     // Start is called before the first frame update
     void Start()
     {
         PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<MoveableObjectManager>();
-        gs = GameState.SelectScreen;
+        gs = GameState.None;
         driveBtn.GetComponent<Button>().onClick.AddListener(SelectPlayerCar);
     }
 
     // Update is called once per frame
     void Update()
     {
+        // DEBUG ----
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            stopSign.GetComponent<FreezeScript>().CallFreezeEvent();
+        }
+        // ----------
+
+
         if (gs == GameState.SelectScreen)
         {
             SelectScreenInput();
@@ -75,8 +79,6 @@ public class GameManager : MonoBehaviour
                 co2 = StartCoroutine(GroundMarkSpawner());
             }
         }
-
-        
     }
 
     private void SelectScreenInput()
@@ -105,7 +107,6 @@ public class GameManager : MonoBehaviour
 
             UpdateButtonImage();
         }
-        
     }
 
     void UpdateButtonImage()
@@ -151,7 +152,8 @@ public class GameManager : MonoBehaviour
     private void IncreaseKM()
     {
         kmTraveled += pm.PlayerCurrentSpeed / 1500;
-        countDown.text = Mathf.RoundToInt(kmTraveled).ToString() + " km";
+        countDownDay.text = Mathf.RoundToInt(kmTraveled).ToString() + " km";
+        countDownNight.text = Mathf.RoundToInt(kmTraveled).ToString() + " km";
     }
 
     public void StartSelectCoroutine()
@@ -162,14 +164,15 @@ public class GameManager : MonoBehaviour
     IEnumerator CountDown()
     {
         pm.anime.SetTrigger("StartGame");
-        countDown = GameObject.Find("Drive!").GetComponent<TMP_Text>();
+        countDownDay = GameObject.Find("Drive!").GetComponent<TMP_Text>();
+        countDownNight = GameObject.Find("Drive! But in light mode").GetComponent<TMP_Text>();
         float timeSpent = 0f;
         while(pm.transform.position.x < 0f)
         {
             if(timeSpent < 1)
             {
-                if (timeSpent > 0.5) countDown.text = "SET";
-                if (timeSpent > 0.9) countDown.text = "GO!";
+                if (timeSpent > 0.5) countDownDay.text = "SET";
+                if (timeSpent > 0.9) countDownDay.text = "GO!";
 
                 timeSpent += Time.deltaTime;
                 pm.transform.position = Vector3.Lerp(new Vector3(-26f, 2f, 0f), Vector3.zero, timeSpent / 1 );
@@ -180,7 +183,7 @@ public class GameManager : MonoBehaviour
         transform.position = Vector3.zero;
         StartGame();
         yield return new WaitForSeconds(1f);
-        countDown.text = kmTraveled.ToString();
+        countDownDay.text = kmTraveled.ToString();
     }
 
     IEnumerator Spawner()

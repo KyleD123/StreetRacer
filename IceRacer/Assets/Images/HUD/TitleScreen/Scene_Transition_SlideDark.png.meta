@@ -1,0 +1,950 @@
+fileFormatVersion: 2
+guid: f1a3b77a8880cec4ca89ea372e4f0334
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11123b0615a4df8408f9b9954cf29e2e
+      internalID: -1726263128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 936943ac9752c0644ad0c83358918075
+      internalID: 1962164397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_2
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25d3e5200adb82418a9065fabdbcf6c
+      internalID: 514151621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a149683151f87241bdc454f6df3f2f6
+      internalID: 1836701298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 395c1042e1d116c43a964f0f81ad2dba
+      internalID: -1249975706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_5
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2b8d98044df0f4eb5e691918fe50e0
+      internalID: -1152522294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 556945d7b59f2eb48bb80aeecb827e34
+      internalID: 1565592014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_7
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b7d5513fbbe0884881a8a0f5c9b92a3
+      internalID: -1180809134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_8
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8625d680d5f929f4eb43402226cc5159
+      internalID: 169448577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_9
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d933c227b46ea6940b6a37b97866e914
+      internalID: -1106535819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_10
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d029a4a33034e94f973d92a7ae6e63f
+      internalID: 1650141623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_11
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 710aba7c7bb6895428f028ca7ec38d6a
+      internalID: -336772623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_12
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c34974523931a747b5e8bf3f755989a
+      internalID: 1800603973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a9a4272a040caf49a35f7af3c884de6
+      internalID: -119965519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_14
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fe8d4071a279a47853c6d299f87c43
+      internalID: -1488572403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_15
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494d9ccab383ed6479c4c53df1ad468e
+      internalID: 333244747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b459c63603db754faafb85bee3cc573
+      internalID: 602058233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb90070d3497f7468ffd65e1a878996
+      internalID: -14111870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_18
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51388b52fbdec334bb885d9309010895
+      internalID: 739953689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_19
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4e5b9d089047d4386229d507359ec5
+      internalID: 2143042773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60629ea41cdc704e884ebad31ef157a
+      internalID: -1535984617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca30d12ee271848449dd10229e42c7a2
+      internalID: -153807345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_22
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8ad628eb51ae44a986438cfea60ec2
+      internalID: 899139063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_23
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1661fd023ba23e44d85dda0c3bf2771d
+      internalID: 986375804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c70d33c9a85b864e8befda917fdc3e6
+      internalID: -791760530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_25
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189bc07c384a76746a1920b5de3b6164
+      internalID: 1378528445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_26
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c74f30c8ce6f9f458b90294216d5ce3
+      internalID: 1289492412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62e974ae92593349b98e00c5cd18405
+      internalID: -917543451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_28
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef4ac510940e0f41bea18acdd5a6d21
+      internalID: 739639912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_29
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e290fa4604922fb44b424d6bdf96be2d
+      internalID: 386489183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_30
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e5b990b0b45be45a03d70fcde34912
+      internalID: 1178328257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_31
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a9bc57e420cdb458e389f9a4e0ab74
+      internalID: -51426460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_32
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6b55fbbca22e5a4ca8c922eedc7f69a
+      internalID: 1190941073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_33
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4de00d20c52808e4997d000bbb694391
+      internalID: 948569494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badaa2b3c63943649bec961c0ac3bd0a
+      internalID: 362807142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_35
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f0bfc290d455041aff927ba8122046
+      internalID: -1445252595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDark_36
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71c5382a81f0cb34c94c7ff1a1787a5c
+      internalID: -1002051307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ThisBitchEmpty
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2847c7b26014dc8499a78fca17432889
+      internalID: -1747987456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Scene_Transition_SlideDark_0: -1726263128
+      Scene_Transition_SlideDark_1: 1962164397
+      Scene_Transition_SlideDark_10: 1650141623
+      Scene_Transition_SlideDark_11: -336772623
+      Scene_Transition_SlideDark_12: 1800603973
+      Scene_Transition_SlideDark_13: -119965519
+      Scene_Transition_SlideDark_14: -1488572403
+      Scene_Transition_SlideDark_15: 333244747
+      Scene_Transition_SlideDark_16: 602058233
+      Scene_Transition_SlideDark_17: -14111870
+      Scene_Transition_SlideDark_18: 739953689
+      Scene_Transition_SlideDark_19: 2143042773
+      Scene_Transition_SlideDark_2: 514151621
+      Scene_Transition_SlideDark_20: -1535984617
+      Scene_Transition_SlideDark_21: -153807345
+      Scene_Transition_SlideDark_22: 899139063
+      Scene_Transition_SlideDark_23: 986375804
+      Scene_Transition_SlideDark_24: -791760530
+      Scene_Transition_SlideDark_25: 1378528445
+      Scene_Transition_SlideDark_26: 1289492412
+      Scene_Transition_SlideDark_27: -917543451
+      Scene_Transition_SlideDark_28: 739639912
+      Scene_Transition_SlideDark_29: 386489183
+      Scene_Transition_SlideDark_3: 1836701298
+      Scene_Transition_SlideDark_30: 1178328257
+      Scene_Transition_SlideDark_31: -51426460
+      Scene_Transition_SlideDark_32: 1190941073
+      Scene_Transition_SlideDark_33: 948569494
+      Scene_Transition_SlideDark_34: 362807142
+      Scene_Transition_SlideDark_35: -1445252595
+      Scene_Transition_SlideDark_36: -1002051307
+      Scene_Transition_SlideDark_4: -1249975706
+      Scene_Transition_SlideDark_5: -1152522294
+      Scene_Transition_SlideDark_6: 1565592014
+      Scene_Transition_SlideDark_7: -1180809134
+      Scene_Transition_SlideDark_8: 169448577
+      Scene_Transition_SlideDark_9: -1106535819
+      ThisBitchEmpty: -1747987456
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

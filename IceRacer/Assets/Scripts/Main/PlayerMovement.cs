@@ -148,8 +148,8 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Horizontal movement
-            float normalizedPos = (PlayerCurrentSpeed / PlayerMaxSpeed) * -30f;
-            float xPos = Mathf.Clamp(normalizedPos, -30f, 0);
+            float normalizedPos = (PlayerCurrentSpeed / PlayerMaxSpeed) * -28f;
+            float xPos = Mathf.Clamp(normalizedPos, -28f, 0);
             gameObject.transform.position = new Vector3(xPos, gameObject.transform.position.y, 0f);
         }
     }

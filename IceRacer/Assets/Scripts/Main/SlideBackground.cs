@@ -1,24 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class SlideBackground : MonoBehaviour
 {
-
-    //Position one: x 168
-    //Position two: x 0
-    //Position three: x -168
-
     private Vector3 pos1;
     private Vector3 pos2 = new Vector3(0,0,0);
     private Vector3 pos3 = new Vector3(-168,0,0);
-
     private GameManager gm;
-
     public int timeBeforeSlide = 10;
-
     public Coroutine co;
-
+    public GameObject borderDark;
+    public GameObject driveDark;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +48,9 @@ public class SlideBackground : MonoBehaviour
         }
 
         gm.Day = false;
+        driveDark.SetActive(false);
+        borderDark.SetActive(false);
         yield return new WaitForSeconds(timeBeforeSlide);
-
         yield return StartCoroutine(Slide2());
     }
 
@@ -75,6 +70,8 @@ public class SlideBackground : MonoBehaviour
         this.transform.position = pos1;
 
         gm.Day = true;
+        driveDark.SetActive(true);
+        borderDark.SetActive(true);
         yield return new WaitForSeconds(timeBeforeSlide);
         yield return StartCoroutine(Slide1());
     }

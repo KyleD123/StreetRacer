@@ -9,11 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public float MaxEnemySpeed;
     [SerializeField] private Vector3 MovementVector;
     private float SpeedThreshhold;
-
     [SerializeField] int gasDamange = 1;
-
     [SerializeField] Animator anime;
-
     public bool dead = false;
 
     // Start is called before the first frame update
