@@ -170,7 +170,7 @@ public class GameManager : MonoBehaviour
 
                 timeSpent += Time.deltaTime;
                 pm.transform.position = Vector3.Lerp(new Vector3(-26f, 2f, 0f), Vector3.zero, timeSpent / 1 );
-                yield return new WaitForSeconds(0.005f);
+                yield return new WaitForSeconds(0.001f);
             }
             
         }

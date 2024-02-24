@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fence : MonoBehaviour
 {
-    private Vector3 StartPosition = new Vector3(459.299988f,23,0);
+    private Vector3 StartPosition = new Vector3(460,22f,0);
 
     private PlayerMovement pm;
 
