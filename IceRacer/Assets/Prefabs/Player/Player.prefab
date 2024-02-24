@@ -113,6 +113,13 @@ MonoBehaviour:
   FAMILY: 0
   carTypeMarkiplier: 1
   anime: {fileID: 0}
+  speedMeterSprites:
+  - {fileID: 1817027269, guid: 93a3110ea3b164b4a8b01794655f00ac, type: 3}
+  - {fileID: -1994182552, guid: 93a3110ea3b164b4a8b01794655f00ac, type: 3}
+  - {fileID: 718841571, guid: 93a3110ea3b164b4a8b01794655f00ac, type: 3}
+  - {fileID: -2030929374, guid: 93a3110ea3b164b4a8b01794655f00ac, type: 3}
+  - {fileID: -234427374, guid: 93a3110ea3b164b4a8b01794655f00ac, type: 3}
+  - {fileID: -1542825178, guid: 93a3110ea3b164b4a8b01794655f00ac, type: 3}
 --- !u!114 &8285609617417975458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,7 +134,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxGas: 15
   CurrentGas: 0
-  sprites: []
+  sprites:
+  - {fileID: -1440889053, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: 333454241, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: 1699748480, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -1758948494, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -856173202, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -1724416177, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -1033977214, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -532544017, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -1011888278, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: 1488448804, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: 1238298596, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: 304803952, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -185086418, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: -43312651, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: 134212035, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
+  - {fileID: 1201248526, guid: a224b42e57e45e548a39bd97ded82a0f, type: 3}
 --- !u!50 &2644956684925598075
 Rigidbody2D:
   serializedVersion: 4

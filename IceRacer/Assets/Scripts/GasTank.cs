@@ -7,22 +7,31 @@ public class GasTank : MonoBehaviour
 {
     public int MaxGas = 15;
     public int CurrentGas;
-    public Image[] sprites;
+    public Sprite[] sprites;
     private PlayerMovement pm;
 
-    private float TimeTillGasLoss = 7.5f;
+    private float TimeTillGasLoss = 15f;
     private float TimeSpent = 0;
+    private Image fuelBar;
+    private int fuelIndex = 15;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
         pm = FindObjectOfType<PlayerMovement>();
+        gm = FindObjectOfType<GameManager>();
         CurrentGas = MaxGas;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(gm.gs == GameState.GamePlay && !fuelBar)
+        {
+            fuelBar = GameObject.Find("Fuel").GetComponent<Image>();
+        }
+
         if(TimeSpent < TimeTillGasLoss)
         {
             TimeSpent += Time.deltaTime;
@@ -32,8 +41,31 @@ public class GasTank : MonoBehaviour
             DecreaseGas(pm.GasSpendRate);
             TimeSpent = 0;
         }
+
+        if(gm.gs == GameState.GamePlay)
+        {
+            if(CurrentGas < 0)
+            {
+                CurrentGas = 0;
+            }
+            
+            fuelBar.sprite = sprites[fuelIndex];
+            fuelIndex = CurrentGas;
+        }
+
+
     }
 
+    public IEnumerator Flashing()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            fuelBar.gameObject.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+            fuelBar.gameObject.SetActive(true);
+        }
+    }
     
     public void IncreaseGas(int amount)
     {

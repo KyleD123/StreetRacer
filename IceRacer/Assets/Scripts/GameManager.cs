@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,12 +37,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite[] btnSprites;
     [SerializeField] private Animator animator;
     public bool carSelected = false;
-    private Text countDown;
+    private TMP_Text countDown;
     public float kmTraveled = 0;
     public bool gameOver = false;
 
     //REMEMBER ME
     public int playerKills = 0;
+
+    public Sprite driveButtonSelected;
 
     // Start is called before the first frame update
     void Start()
@@ -94,8 +97,11 @@ public class GameManager : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.Keypad4)) leftPressed = false;
 
-            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyUp(KeyCode.Keypad5))
-            { driveBtn.GetComponent<Button>().onClick.Invoke(); }
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Keypad5))
+            { 
+                driveBtn.GetComponent<Image>().sprite = driveButtonSelected;
+                driveBtn.GetComponent<Button>().onClick.Invoke(); 
+            }
 
             UpdateButtonImage();
         }
@@ -156,7 +162,7 @@ public class GameManager : MonoBehaviour
     IEnumerator CountDown()
     {
         pm.anime.SetTrigger("StartGame");
-        countDown = GameObject.Find("Drive!").GetComponent<Text>();
+        countDown = GameObject.Find("Drive!").GetComponent<TMP_Text>();
         float timeSpent = 0f;
         while(pm.transform.position.x < 0f)
         {

@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerMovement : MonoBehaviour
     private GameManager gm;
 
     public Animator anime;
+
+    private Image speedMeter;
+
+    public Sprite[] speedMeterSprites;
     
     // Start is called before the first frame update
     void Start()
@@ -34,6 +39,46 @@ public class PlayerMovement : MonoBehaviour
     {
         AlterPlayerPosition();
         AlterPlayerSpeed();
+    }
+
+    void Update()
+    {
+        if(gm.gs == GameState.GamePlay && !speedMeter)
+        {
+            speedMeter = GameObject.Find("Speed").GetComponent<Image>();
+        }
+
+        if(gm.gs == GameState.GamePlay)
+            SetSpeedometer();
+
+    }
+
+    private void SetSpeedometer()
+    {
+        float normSpeed = (PlayerCurrentSpeed/PlayerMaxSpeed) * 5;
+        switch(normSpeed)
+        {
+            case 0:
+                speedMeter.sprite = speedMeterSprites[0];
+                break;
+            case float n when (n > 0 && n < 2):
+                speedMeter.sprite = speedMeterSprites[1];
+                break;
+            case float n when (n >= 2 && n < 3):
+                speedMeter.sprite = speedMeterSprites[2];
+                break;
+            case float n when (n >= 3 && n < 4):
+                speedMeter.sprite = speedMeterSprites[3];
+                break;
+            case float n when (n >= 4 && n < 5):
+                speedMeter.sprite = speedMeterSprites[4];
+                break;
+            case float n when (n >= 5):
+                speedMeter.sprite = speedMeterSprites[5];
+                break;
+            default:
+                break;
+        }
     }
 
     private void AlterPlayerSpeed()
@@ -87,6 +132,7 @@ public class PlayerMovement : MonoBehaviour
     {
         anime.SetBool("GasEmpty", true);
         gm.gameOver = true;
+        gt.StartCoroutine("Flashing");
     }
 
     private void AlterPlayerPosition()
