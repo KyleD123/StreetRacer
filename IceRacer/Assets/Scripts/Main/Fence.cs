@@ -18,7 +18,7 @@ public class Fence : MonoBehaviour
     void Update()
     {
 
-        transform.position += new Vector3(-pm.PlayerCurrentSpeed/150, 0, 0);
+        transform.position += new Vector3(-pm.PlayerCurrentSpeed/250, 0, 0);
 
         if(transform.position.x <= -559)
         {

@@ -49,7 +49,7 @@ public class SlideBackground : MonoBehaviour
 
         gm.Day = false;
         driveDark.SetActive(false);
-        borderDark.SetActive(false);
+        //borderDark.SetActive(false);
         yield return new WaitForSeconds(timeBeforeSlide);
         yield return StartCoroutine(Slide2());
     }
@@ -71,7 +71,7 @@ public class SlideBackground : MonoBehaviour
 
         gm.Day = true;
         driveDark.SetActive(true);
-        borderDark.SetActive(true);
+        //borderDark.SetActive(true);
         yield return new WaitForSeconds(timeBeforeSlide);
         yield return StartCoroutine(Slide1());
     }
