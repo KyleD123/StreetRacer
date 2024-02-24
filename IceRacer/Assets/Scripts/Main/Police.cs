@@ -12,6 +12,9 @@ public class Police : MonoBehaviour
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        
+        pm.shieldActive = false;
+        pm.StartCoroutine("DisableShield");
     }
 
     // Update is called once per frame

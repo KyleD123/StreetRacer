@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] PlayerPrefabs;
     public GameObject JerryCanPrefab;
     public GameObject SpeedUpPrefab;
+    public GameObject ShieldPrefab;
     private Coroutine co1;
     private Coroutine co2;
     public GameObject GroundMarkLight1, GroundMarkLight2;
@@ -227,6 +228,7 @@ public class GameManager : MonoBehaviour
     {
         while(true)
         {
+            if (gameOver) yield break;
             yield return new WaitForSeconds(GroundSpawnRate);
             if(Day)
             {
@@ -258,14 +260,19 @@ public class GameManager : MonoBehaviour
     {
         GameObject GOReturn = null;
         float rnd = Random.Range(0,100);
-        if(rnd > 50)
+        if(rnd <= 50)
         {
             GOReturn = Instantiate(JerryCanPrefab, new Vector3(x,y,0), Quaternion.identity);
             PowerUpMan.MoveableObjectList.Add(GOReturn);
         }
-        else if (!pm.FAMILY)
+        else if (!pm.FAMILY && rnd > 50 && rnd <= 75)
         {
             GOReturn = Instantiate(SpeedUpPrefab, new Vector3(x,y,0), Quaternion.identity);
+            PowerUpMan.MoveableObjectList.Add(GOReturn);
+        }
+        else
+        {
+            GOReturn = Instantiate(ShieldPrefab, new Vector3(x,y,0), Quaternion.identity);
             PowerUpMan.MoveableObjectList.Add(GOReturn);
         }
 

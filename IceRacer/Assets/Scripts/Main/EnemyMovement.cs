@@ -77,7 +77,12 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.GetChild(0).gameObject.SetActive(false);
             GameObject.Find("GameManager").GetComponent<GameManager>().playerKills++;
-            pm.DecreaseGas(gasDamange);
+            if (pm.shieldActive)
+            {
+                pm.DecreaseGas(gasDamange);
+                pm.shieldActive = false;
+                pm.StartCoroutine("DisableShield");
+            }
             anime.SetBool("Dead", true);
             dead = true;
         }

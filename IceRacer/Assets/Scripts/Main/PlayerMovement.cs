@@ -16,16 +16,13 @@ public class PlayerMovement : MonoBehaviour
     public float PlayerMaxSpeed;
     [SerializeField] private float PostionChangeSpeed = 0.2f;
     public bool FAMILY = false;
-
     public float carTypeMarkiplier = 1;
-
     private GameManager gm;
-
     public Animator anime;
-
     private Image speedMeter;
-
     public Sprite[] speedMeterSprites;
+    public bool shieldActive = false;
+    public GameObject shield;
     
     // Start is called before the first frame update
     void Start()
@@ -125,10 +122,10 @@ public class PlayerMovement : MonoBehaviour
             {
                 StopCar();
             }
-            if(PlayerCurrentSpeed <= 0 && gm.gameOver)
+            if(PlayerCurrentSpeed <= 0 && gm.gameOver && gm.gs != GameState.EndScreen)
             {
-                PlayerCurrentSpeed -= CarSpeedMultiplier * 2 * Time.deltaTime;
                 gm.gs = GameState.EndScreen;
+                GameObject.Find("Transition").GetComponent<Animator>().Play("TransitionToEnd");
             }
         }
     }
@@ -159,6 +156,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public int GetCurrentGasVal()
+    {
+        return gt.CurrentGas;
+    }
+
     /// <summary>
     /// This increases the amount of gas the car currently has
     /// </summary>
@@ -187,7 +189,18 @@ public class PlayerMovement : MonoBehaviour
         StartCoroutine(DecreaseGasSpendRate(amount));
     }
 
-    
+    IEnumerator DisableShield()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            shield.SetActive(false);
+            yield return new WaitForSeconds(0.3f);
+            shield.SetActive(true);    
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        shield.SetActive(false);
+    }
 
     /// <summary>
     /// Decreases the amount of gas spent
@@ -228,14 +241,9 @@ public class PlayerMovement : MonoBehaviour
         this.PlayerCurrentSpeed = this.PlayerMaxSpeed;
     }
 
-    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
-
     public void HitByCop()
     {
+        GameObject.Find("Transition").GetComponent<Animator>().Play("TransitionToEnd");
         Destroy(this.gameObject);
     }
 

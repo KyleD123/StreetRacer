@@ -35,7 +35,10 @@ public class SpeedPowerUp : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
-            pm.IncreaseMaxKMpH(100);
+            if (pm.GetCurrentGasVal() > 0)
+            {
+                pm.IncreaseMaxKMpH(100);
+            }
             Destroy(this.gameObject);
         }
 
