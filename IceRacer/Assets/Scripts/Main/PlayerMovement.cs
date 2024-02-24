@@ -105,13 +105,13 @@ public class PlayerMovement : MonoBehaviour
             }
             
             // Vertical Contraints
-            if (this.transform.position.y <= -18.46001f)
+            if (this.transform.position.y <= -9)
             {
-                this.transform.position = new Vector3(this.transform.position.x, -18.46001f, 0);
+                this.transform.position = new Vector3(this.transform.position.x, -9, 0);
             }
-            if (this.transform.position.y >= 18.97278f)
+            if (this.transform.position.y >= 21)
             {
-                this.transform.position = new Vector3(this.transform.position.x, 18.97278f, 0);
+                this.transform.position = new Vector3(this.transform.position.x, 21, 0);
             }
 
             if (PlayerCurrentSpeed < 0) PlayerCurrentSpeed = 0;
@@ -148,8 +148,8 @@ public class PlayerMovement : MonoBehaviour
             }
 
             // Horizontal movement
-            float normalizedPos = (PlayerCurrentSpeed / PlayerMaxSpeed) * -28f;
-            float xPos = Mathf.Clamp(normalizedPos, -28f, 0);
+            float normalizedPos = (PlayerCurrentSpeed / PlayerMaxSpeed) * -17;
+            float xPos = Mathf.Clamp(normalizedPos, -17f, 0);
             gameObject.transform.position = new Vector3(xPos, gameObject.transform.position.y, 0f);
         }
     }

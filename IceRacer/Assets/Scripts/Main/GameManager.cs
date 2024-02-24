@@ -169,12 +169,12 @@ public class GameManager : MonoBehaviour
                 if (timeSpent > 0.9) countDownDay.text = "GO!";
 
                 timeSpent += Time.deltaTime;
-                pm.transform.position = Vector3.Lerp(new Vector3(-26f, 2f, 0f), Vector3.zero, timeSpent / 1 );
+                pm.transform.position = Vector3.Lerp(new Vector3(-15f, 8f, 0f), new Vector3(0f,8f,0f), timeSpent / 1 );
                 yield return new WaitForSeconds(0.001f);
             }
             
         }
-        transform.position = Vector3.zero;
+        transform.position = new Vector3(0f,8f,0f);
         StartGame();
         yield return new WaitForSeconds(1f);
         countDownDay.text = kmTraveled.ToString();

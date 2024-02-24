@@ -13,8 +13,8 @@ public class SelectManager : MonoBehaviour
 
     public GameObject currentCard;
 
-    private float startingOffsetX = -26f;
-    private float startingOffsetY = 2;
+    private float startingOffsetX = -15f;
+    private float startingOffsetY = 8;
 
     [SerializeField] private GameObject HUDReference;
 
