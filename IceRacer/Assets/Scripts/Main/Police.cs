@@ -26,7 +26,7 @@ public class Police : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,pm.transform.position, 0.05f);
+        transform.position = Vector3.MoveTowards(transform.position,pm.transform.position, 0.3f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

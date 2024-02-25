@@ -5,6 +5,7 @@ public class TitleScreenController : MonoBehaviour
 {
     [SerializeField] private Sprite pressedSprite; 
     private AudioMaster ass;
+    public bool Cutscene = true;
 
     void Start()
     {
@@ -14,11 +15,14 @@ public class TitleScreenController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Keypad5))
+        if(!Cutscene)
         {
-            ass.StartGame();
-            gameObject.GetComponent<Button>().onClick.Invoke();
-            gameObject.GetComponent<Image>().sprite = pressedSprite;
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Keypad5))
+            {
+                ass.StartGame();
+                gameObject.GetComponent<Button>().onClick.Invoke();
+                gameObject.GetComponent<Image>().sprite = pressedSprite;
+            }
         }
     }
 

@@ -20,9 +20,10 @@ public class Fence : MonoBehaviour
     {
         if(pm)
         {
-            transform.position += new Vector3(-pm.PlayerCurrentSpeed/200, 0, 0);
+            transform.position += new Vector3(-pm.PlayerCurrentSpeed/100, 0, 0);
 
-            if(transform.position.x <= -559)
+            //Vector3(-51.8400002,24,0)
+            if(transform.position.x <= -51)
             {
                 transform.position = StartPosition;
             }

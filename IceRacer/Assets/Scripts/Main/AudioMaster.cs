@@ -1,9 +1,12 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class AudioMaster : MonoBehaviour
 {
     [Header("Audio Source")]
     public AudioSource ass;
+    private AudioSource music;
     [Header("Audio Clips")]
     public AudioClip buttonPress;
     public AudioClip explode;
@@ -17,23 +20,37 @@ public class AudioMaster : MonoBehaviour
     public AudioClip fuelEmpty;
     public AudioClip shieldBreak;
     
+    public delegate void SoundToPlay();
     
     // Start is called before the first frame update
     void Start()
     {
         ass = GetComponent<AudioSource>();
+        music = GameObject.Find("Music").GetComponent<AudioSource>();
+    }
+
+    IEnumerator PlaySound()
+    {
+        music.Pause();
+        ass.Play();
+        while(ass.isPlaying)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.05f);
+        music.UnPause();
     }
 
     public void PressButton()
     {
         ass.clip = buttonPress;
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void Explode()
     {
         ass.clip = explode;
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void PickUp(int sound)
@@ -55,72 +72,72 @@ public class AudioMaster : MonoBehaviour
             default:
                 break;
         }
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void Freeze()
     {
         ass.clip = freezeSound;
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void StopSignAppear()
     {
         ass.clip = stopSignAppear;
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void StopSignQTE()
     {
         ass.clip = stopSignQTE;
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void StopSignFail()
     {
         ass.clip = stopSignedFail;
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void GameOver()
     {
         ass.clip = gameOver;
-        ass.Play();
+        StartCoroutine(PlaySound());
     }
 
     public void StartGame()
     {
         ass.clip = startGame;
-        ass.Play();
+        StartCoroutine(PlaySound());
     } 
 
     public void ReadySet()
     {
         ass.clip = readySet;
-        ass.Play();
+        StartCoroutine(PlaySound());
     } 
 
     public void Go()
     {
         ass.clip = go;
-        ass.Play();
+        StartCoroutine(PlaySound());
     } 
 
     public void Drive()
     {
         ass.clip = drive;
-        ass.Play();
+        StartCoroutine(PlaySound());
     } 
 
     public void FuelEmpty()
     {
         ass.clip = fuelEmpty;
-        ass.Play();
+        StartCoroutine(PlaySound());
     } 
 
     public void ShieldBreak()
     {
         ass.clip = shieldBreak;
-        ass.Play();
+        StartCoroutine(PlaySound());
     } 
 }

@@ -1,0 +1,976 @@
+fileFormatVersion: 2
+guid: 2998b6ba4a1587244ae13d8d3eb3a5a1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2843a94f01aa264aa152e295e66d6bf
+      internalID: 702825314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_1
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0f30d4c70081cb4996e316f630931e6
+      internalID: -1468217153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_2
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e2894c648e531b42b6da1e63b1d5d13
+      internalID: 1307016163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_3
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87fd3ccf71e0c434ea00cd301789006b
+      internalID: -1024913928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_4
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc1a516c9ae01254aa0fdc6e4189b0fc
+      internalID: 376079115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_5
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7adba87110c677b4b837b44d40a6c74f
+      internalID: 304896865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea0525a59fae5c45bdbb4266289a72a
+      internalID: 181809825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_7
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d35366ca27d5442938df7c36f37d26
+      internalID: -1913512842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_8
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb0ef49cd606f647bbe536171da2b5f
+      internalID: -1807576857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_9
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bd0e773b2b232b4fb0b2aeb4523443c
+      internalID: -1243611769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_10
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df0d579fe962ee4f8a8073060a92a22
+      internalID: -1875476359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_11
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 107bd844bf9791e49b1ef2959086a4c4
+      internalID: -295480302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_12
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 192
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a3050f86009d844a5bb4bc5555b53b
+      internalID: 1354206531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6617fe467662f148b5c8f01b6e19282
+      internalID: 1096910372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_14
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f5fc1228b220384ea34ea89b5fe3777
+      internalID: 2128898936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_15
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0797b013f1a5b9a4e9d90f65254ce821
+      internalID: -864309749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_16
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54093c9501733ce4b8087c2e4ecc6ff1
+      internalID: 1092764986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_17
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06257e347815e4d4f8e907f0c1822cc8
+      internalID: 1687311544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_18
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0d7b3668f58c4d4e80a4ed4ca511559
+      internalID: -1845895554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_19
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 144
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43edbe75ae99e6741b4d0c738442b723
+      internalID: -153897645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fb0b76fd11f074ab48af6c950c3993
+      internalID: -1435668095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_21
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61fe54bc885e4b4c98a105379247133
+      internalID: -668450770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_22
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552c58b4833384049b9568c1143810ce
+      internalID: -971745091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_23
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf181e33106f0d7429606d8235df9446
+      internalID: -1023325204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_24
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd6bff467dbbb64981d7665185afece
+      internalID: -320606775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_25
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00701fd519b338c4983c97baa6871570
+      internalID: -1900949202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_26
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 96
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f3a1f0b37872f4eb54a6d9d47708bb
+      internalID: -289339016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc087eb8e95b1f844b46741be63f5fb4
+      internalID: 734340829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_28
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a58ecd09e8680345a58c21b6eeaaa60
+      internalID: 1172708150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_29
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8aec3343b093c498fc9a2e6963cdd5
+      internalID: -178006684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_30
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a96c02f6d1d7394488718c2c5450719
+      internalID: 320373599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_31
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69508c1e284e6bb468e7c5753c0c6b15
+      internalID: -91780063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_32
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7155552f4834e41965d59c382cca1e
+      internalID: 826260877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_33
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 48
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 218b01b125a95484a8aa89f9a40c2738
+      internalID: -2067726880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207543eef70b7e745a3ff2d5ded8d0ec
+      internalID: 1680436953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_35
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 0
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0371939f221a4f4fb173198a299eceb
+      internalID: 1098453844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scene_Transition_SlideDarkLogo_36
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6bb7ec74fd0e1d43aacfc2b52809e86
+      internalID: 1706868512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empty
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 84
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0f6141a8499f9146ac09f2b0af88642
+      internalID: 459451321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Empty: 459451321
+      Scene_Transition_SlideDarkLogo_0: 702825314
+      Scene_Transition_SlideDarkLogo_1: -1468217153
+      Scene_Transition_SlideDarkLogo_10: -1875476359
+      Scene_Transition_SlideDarkLogo_11: -295480302
+      Scene_Transition_SlideDarkLogo_12: 1354206531
+      Scene_Transition_SlideDarkLogo_13: 1096910372
+      Scene_Transition_SlideDarkLogo_14: 2128898936
+      Scene_Transition_SlideDarkLogo_15: -864309749
+      Scene_Transition_SlideDarkLogo_16: 1092764986
+      Scene_Transition_SlideDarkLogo_17: 1687311544
+      Scene_Transition_SlideDarkLogo_18: -1845895554
+      Scene_Transition_SlideDarkLogo_19: -153897645
+      Scene_Transition_SlideDarkLogo_2: 1307016163
+      Scene_Transition_SlideDarkLogo_20: -1435668095
+      Scene_Transition_SlideDarkLogo_21: -668450770
+      Scene_Transition_SlideDarkLogo_22: -971745091
+      Scene_Transition_SlideDarkLogo_23: -1023325204
+      Scene_Transition_SlideDarkLogo_24: -320606775
+      Scene_Transition_SlideDarkLogo_25: -1900949202
+      Scene_Transition_SlideDarkLogo_26: -289339016
+      Scene_Transition_SlideDarkLogo_27: 734340829
+      Scene_Transition_SlideDarkLogo_28: 1172708150
+      Scene_Transition_SlideDarkLogo_29: -178006684
+      Scene_Transition_SlideDarkLogo_3: -1024913928
+      Scene_Transition_SlideDarkLogo_30: 320373599
+      Scene_Transition_SlideDarkLogo_31: -91780063
+      Scene_Transition_SlideDarkLogo_32: 826260877
+      Scene_Transition_SlideDarkLogo_33: -2067726880
+      Scene_Transition_SlideDarkLogo_34: 1680436953
+      Scene_Transition_SlideDarkLogo_35: 1098453844
+      Scene_Transition_SlideDarkLogo_36: 1706868512
+      Scene_Transition_SlideDarkLogo_4: 376079115
+      Scene_Transition_SlideDarkLogo_5: 304896865
+      Scene_Transition_SlideDarkLogo_6: 181809825
+      Scene_Transition_SlideDarkLogo_7: -1913512842
+      Scene_Transition_SlideDarkLogo_8: -1807576857
+      Scene_Transition_SlideDarkLogo_9: -1243611769
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
