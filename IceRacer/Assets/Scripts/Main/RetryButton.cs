@@ -8,11 +8,12 @@ public class RetryButton : MonoBehaviour
 {
     public GameObject transition;
     public Sprite clickedSprite;
+    private AudioMaster ass;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class RetryButton : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Keypad5))
         { 
+            ass.PressButton();
             gameObject.GetComponent<Image>().sprite = clickedSprite;
             gameObject.GetComponent<Button>().onClick.Invoke(); 
         }

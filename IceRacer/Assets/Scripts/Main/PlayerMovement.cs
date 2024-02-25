@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public Sprite[] speedMeterSprites;
     public bool shieldActive = false;
     public GameObject shield;
+    private AudioMaster ass;
     
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         gt = this.GetComponent<GasTank>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         anime = gameObject.GetComponent<Animator>();
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     void FixedUpdate()
@@ -193,6 +195,7 @@ public class PlayerMovement : MonoBehaviour
     {
         for (int i = 0; i < 3; i++)
         {
+            ass.ShieldBreak();
             shield.SetActive(false);
             yield return new WaitForSeconds(0.3f);
             shield.SetActive(true);    

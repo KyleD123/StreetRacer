@@ -9,11 +9,13 @@ public class GasPowerUp : MonoBehaviour
     private float MaxSpeed;
     private Vector3 Movement;
     private float PlayerKMpH;
+    private AudioMaster ass;
 
     // Start is called before the first frame update
     void Start()
     {
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
     // Update is called once per frame
     void Update()
@@ -35,6 +37,7 @@ public class GasPowerUp : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            ass.PickUp(2);
             pm.IncreaseGas(3);
             Destroy(this.gameObject, 1);
         }

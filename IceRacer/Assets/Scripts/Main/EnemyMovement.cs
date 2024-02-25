@@ -13,6 +13,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] Animator anime;
     public bool dead = false;
     private GameManager gm;
+    private AudioMaster ass;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         anime = gameObject.GetComponent<Animator>();
         SpeedThreshhold = pm.PlayerMaxSpeed / 2f;
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     void FixedUpdate()
@@ -31,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void ApplyEnemyMovement()
     {
-        this.transform.position += Vector3.right * EnemyMovementSpeed * Time.deltaTime;
+        transform.position += Vector3.right * EnemyMovementSpeed * Time.deltaTime;
     }
 
     // Update is called once per frame
@@ -65,7 +67,8 @@ public class EnemyMovement : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // ADD EXPLOSTION ANIMATION
+        if (gameObject.transform.position.x >= -45 && gameObject.transform.position.x <= 45) ass.Explode();
+
         if (collision.gameObject.tag == "Enemy")
         {
             transform.GetChild(0).gameObject.SetActive(false);
@@ -79,9 +82,12 @@ public class EnemyMovement : MonoBehaviour
             GameObject.Find("GameManager").GetComponent<GameManager>().playerKills++;
             if (pm.shieldActive)
             {
-                pm.DecreaseGas(gasDamange);
                 pm.shieldActive = false;
                 pm.StartCoroutine("DisableShield");
+            }
+            else
+            {
+                pm.DecreaseGas(gasDamange);
             }
             anime.SetBool("Dead", true);
             dead = true;

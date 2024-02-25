@@ -9,12 +9,14 @@ public class SpeedPowerUp : MonoBehaviour
     [SerializeField] private float MaxPickUpMovementSpeed;
     [SerializeField] private Vector3 MovementVector;
     [SerializeField] private float PlayerKMpH;
+    private AudioMaster ass;
 
     // Start is called before the first frame update
     void Start()
     {
         pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<MoveableObjectManager>();
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     // Update is called once per frame
@@ -37,6 +39,7 @@ public class SpeedPowerUp : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            ass.PickUp(1);
             if (pm.GetCurrentGasVal() > 0)
             {
                 pm.IncreaseMaxKMpH(100);

@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShieldPowerup : MonoBehaviour
 {
    private PlayerMovement pm;
+   private AudioMaster ass;
 
    void Start()
    {
         pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
    }
 
     void Update()
@@ -30,6 +30,7 @@ public class ShieldPowerup : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            ass.PickUp(3);
             pm.shieldActive = true;
             pm.shield.SetActive(true);
             Destroy(gameObject, 1);

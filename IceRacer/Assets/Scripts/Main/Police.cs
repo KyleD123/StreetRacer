@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Police : MonoBehaviour
@@ -8,8 +9,8 @@ public class Police : MonoBehaviour
     private PlayerMovement pm;
     private GameManager gm;
     private Vector3 StartPos = new Vector3(70f, 0f, 0f);
-
     private GameObject freezeSprite;
+    private AudioMaster ass;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class Police : MonoBehaviour
         pm.shieldActive = false;
         pm.StartCoroutine("DisableShield");
         StartCoroutine(FlashFreeze());
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     // Update is called once per frame
@@ -31,11 +33,12 @@ public class Police : MonoBehaviour
     {
         if(collision.transform.tag == "Player")
         {
+            ass.Explode();
             pm.transform.GetChild(0).gameObject.SetActive(false);
             pm.anime.SetTrigger("Dead");
             gm.gs = GameState.EndScreen;
             gm.gameOver = true;
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -47,6 +50,7 @@ public class Police : MonoBehaviour
             freezeSprite.SetActive(false);
             yield return new WaitForSeconds(0.3f);
             freezeSprite.SetActive(true);
+            if (count % 2 == 0) ass.Freeze();
             yield return new WaitForSeconds(0.3f);
             count++;
         }

@@ -4,6 +4,12 @@ using UnityEngine.SceneManagement;
 public class TransitionToSelectScript : MonoBehaviour
 {
     public GameObject EndScreen;
+    private AudioMaster ass;
+
+    void Start()
+    {
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
+    }
 
     public void DeleteTransition()
     {
@@ -12,6 +18,7 @@ public class TransitionToSelectScript : MonoBehaviour
 
     public void ChangeToEndScene()
     {
+        ass.GameOver();
         EndScreen.SetActive(true);
     }
 

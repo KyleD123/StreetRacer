@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
     public Sprite driveButtonSelected;
     public GameObject stopSign;
     public bool failedToFreeze = false;
-
     public TMP_Text kills,dist;
+    private AudioMaster ass;
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour
         PowerUpMan = GameObject.Find("PowerUpManager").GetComponent<MoveableObjectManager>();
         gs = GameState.None;
         driveBtn.GetComponent<Button>().onClick.AddListener(SelectPlayerCar);
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     // Update is called once per frame
@@ -91,6 +92,7 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.Keypad6))
             {
+                ass.PressButton();
                 rightBtn.GetComponent<Button>().onClick.Invoke();
                 rightPressed = true;
             }
@@ -98,6 +100,7 @@ public class GameManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.Keypad4))
             {
+                ass.PressButton();
                 leftBtn.GetComponent<Button>().onClick.Invoke();
                 leftPressed = true;
             }
@@ -105,6 +108,7 @@ public class GameManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.Keypad5))
             { 
+                ass.Drive();
                 driveBtn.GetComponent<Image>().sprite = driveButtonSelected;
                 driveBtn.GetComponent<Button>().onClick.Invoke(); 
             }
@@ -171,12 +175,16 @@ public class GameManager : MonoBehaviour
         countDownDay = GameObject.Find("Drive!").GetComponent<TMP_Text>();
         countDownNight = GameObject.Find("Drive! But in light mode").GetComponent<TMP_Text>();
         float timeSpent = 0f;
+        ass.ReadySet();
+
+        bool playedSet = false;
+        bool playedGo = false;
         while(pm.transform.position.x < 0f)
         {
             if(timeSpent < 1)
             {
-                if (timeSpent > 0.5) countDownDay.text = "SET";
-                if (timeSpent > 0.9) countDownDay.text = "GO!";
+                if (timeSpent > 0.5) {countDownDay.text = "SET"; if (playedSet == false) ass.ReadySet(); playedSet = true;}
+                if (timeSpent > 0.9) {countDownDay.text = "GO!"; if (playedGo == false) ass.Go(); playedGo = true;}
 
                 timeSpent += Time.deltaTime;
                 pm.transform.position = Vector3.Lerp(new Vector3(-15f, 8f, 0f), new Vector3(0f,8f,0f), timeSpent / 1 );

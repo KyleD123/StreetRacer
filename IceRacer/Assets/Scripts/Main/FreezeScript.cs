@@ -13,11 +13,13 @@ public class FreezeScript : MonoBehaviour
 
     private Animator anime;
     private GameManager gm;
+    private AudioMaster ass;
 
     void Start()
     {
         gm = FindObjectOfType<GameManager>().GetComponent<GameManager>();
         anime = GetComponent<Animator>();
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     void Update()
@@ -39,6 +41,7 @@ public class FreezeScript : MonoBehaviour
     IEnumerator FreezeCounter()
     {
         anime.SetTrigger("SlideIn");
+        ass.StopSignAppear();
         currentCount = 0;
         itsFreezingTime = true;
         // Count until reaction time.
@@ -48,7 +51,7 @@ public class FreezeScript : MonoBehaviour
         {
             currentCount += Time.deltaTime;
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Keypad0))
-            { itsFreezingTime = false; break; }
+            { itsFreezingTime = false; ass.StopSignQTE(); break; }
             yield return null;
         }
         
@@ -58,6 +61,7 @@ public class FreezeScript : MonoBehaviour
         // The cops then freezed all over
         if (itsFreezingTime)
         {
+            ass.StopSignFail();
             gm.failedToFreeze = true;
             Instantiate(policePrefab, new Vector3(70f, 0f, 0f), Quaternion.identity);
         }

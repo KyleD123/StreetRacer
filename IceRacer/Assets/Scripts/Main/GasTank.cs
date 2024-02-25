@@ -15,6 +15,7 @@ public class GasTank : MonoBehaviour
     private Image fuelBar;
     private int fuelIndex = 15;
     private GameManager gm;
+    private AudioMaster ass;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class GasTank : MonoBehaviour
         pm = FindObjectOfType<PlayerMovement>();
         gm = FindObjectOfType<GameManager>();
         CurrentGas = MaxGas;
+        ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
 
     // Update is called once per frame
@@ -60,10 +62,12 @@ public class GasTank : MonoBehaviour
     {
         while(true)
         {
+            ass.FuelEmpty();
             yield return new WaitForSeconds(0.5f);
             fuelBar.gameObject.SetActive(false);
             yield return new WaitForSeconds(0.5f);
             fuelBar.gameObject.SetActive(true);
+            if (gm.gs == GameState.EndScreen) yield break;
         }
     }
     
