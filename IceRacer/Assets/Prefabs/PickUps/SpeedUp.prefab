@@ -99,6 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6f9499855396342ac74790db58bdc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pm: {fileID: 0}
+  PowerUpMan: {fileID: 0}
+  Speed: 5.5
+  MaxPickUpMovementSpeed: 0
+  MovementVector: {x: 0, y: 0, z: 0}
+  PlayerKMpH: 0
 --- !u!50 &2987789881714960776
 Rigidbody2D:
   serializedVersion: 4

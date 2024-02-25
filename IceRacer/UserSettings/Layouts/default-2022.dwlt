@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 42
+  controlID: 54
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 43
+  controlID: 55
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 332
     height: 558
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -270,8 +270,8 @@ MonoBehaviour:
     y: 0
     width: 471
     height: 939
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -660,9 +660,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 8.310208, y: 7.592908, z: 1.9987026}
+    m_Target: {x: 16.57309, y: -7.579158, z: 2.099664}
     speed: 2
-    m_Value: {x: 8.750989, y: 6.3475947, z: 2.0205705}
+    m_Value: {x: 16.57309, y: -7.579158, z: 2.099664}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -712,9 +712,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 50.78206
+    m_Target: 40.68606
     speed: 2
-    m_Value: 48.595272
+    m_Value: 40.68606
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -778,7 +778,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0e2dffffb42dffff0230ffff1630ffff8e59ffff345affff825cffff965cffff2886ffff76e9ffff1cfbffff326f0000466f0000966f00009e6f0000b26f0000dc6f0000fc9e0000629f0000b09f0000
+      m_ExpandedIDs: 5081fffff681ffff4484ffff5884ffff68e4ffff1cfbffff526f0000b86f0000d46f000006700000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -869,7 +869,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -948,6 +948,7 @@ MonoBehaviour:
     - {fileID: -7780214466118360311, guid: dac42c2e06ef02f4abbd9c1c94aa9e2b, type: 2}
     - {fileID: 837612783446443484, guid: 687f8ff0a299766478447017cbbcf4ac, type: 2}
     - {fileID: -7270932023339669478, guid: 6ed335b1dc2ffae4e9daaa1f81264a34, type: 2}
+    - {fileID: -8257066651435389823, guid: 336749f95b226244ca01aa8fae9e6ace, type: 2}
     m_ValueSerializationHelper:
     - e00: 1
       e01: 0
@@ -1141,10 +1142,26 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: dac42c2e06ef02f4abbd9c1c94aa9e2b, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 336749f95b226244ca01aa8fae9e6ace, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -7780214466118360311, guid: dac42c2e06ef02f4abbd9c1c94aa9e2b, type: 2}
+  - m_Target: {fileID: -8257066651435389823, guid: 336749f95b226244ca01aa8fae9e6ace, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1202,7 +1219,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SoundFX
+    - Assets/Prefabs/PickUps
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1210,16 +1227,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 72
   m_LastFolders:
-  - Assets/SoundFX
+  - Assets/Prefabs/PickUps
   m_LastFoldersGridSize: 72
   m_LastProjectPath: C:\Users\kyled\OneDrive\Desktop\UnityProjects\StreetRacer\StreetRacer\IceRacer
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 92}
-    m_SelectedIDs: c6ac0000
-    m_LastClickedID: 44230
-    m_ExpandedIDs: 000000006c7300006e730000707300007273000074730000fe740000e476000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 152}
+    m_SelectedIDs: 60750000
+    m_LastClickedID: 30048
+    m_ExpandedIDs: 00000000b4730000b6730000b8730000ba730000bc730000be730000c073000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1247,7 +1264,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006c7300006e730000707300007273000074730000
+    m_ExpandedIDs: 00000000b4730000b6730000b8730000ba730000bc730000be730000c0730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1275,7 +1292,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300003879000056a700008691000094910000b8800000b4790000ce790000b089ffffa46f0000ee80000014820000c67000005671000046760000be71000034710000fc750000887500006c750000e8710000
+    m_ExpandedInstanceIDs: c62300003879000056a700008691000094910000b8800000b4790000ce790000b089ffffa46f0000ee80000014820000c67000005671000046760000be71000034710000fc750000887500006c750000e871000012720000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1325,7 +1342,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 631
-    width: 1019
+    width: 1448
     height: 360
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1378,7 +1395,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 314
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -1420,4 +1437,4 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 40622
+  m_LastSelectedObjectID: 28588

@@ -28,9 +28,11 @@ public class ShieldPowerup : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             pm.shieldActive = true;
             pm.shield.SetActive(true);
-            Destroy(gameObject);
+            Destroy(gameObject, 1);
         }
    }
 }

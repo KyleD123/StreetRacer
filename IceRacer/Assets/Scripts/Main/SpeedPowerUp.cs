@@ -35,11 +35,13 @@ public class SpeedPowerUp : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             if (pm.GetCurrentGasVal() > 0)
             {
                 pm.IncreaseMaxKMpH(100);
             }
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 1);
         }
 
     }

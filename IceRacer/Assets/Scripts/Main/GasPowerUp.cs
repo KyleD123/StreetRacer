@@ -33,8 +33,10 @@ public class GasPowerUp : MonoBehaviour
 
         if(collision.gameObject.tag == "Player")
         {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
             pm.IncreaseGas(3);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 1);
         }
 
     }
