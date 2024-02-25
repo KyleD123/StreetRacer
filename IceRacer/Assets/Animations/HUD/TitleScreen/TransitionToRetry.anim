@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TransitionToEnd
+  m_Name: TransitionToRetry
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,47 +21,41 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1747987456, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.06666667
       value: {fileID: -1726263128, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.13333334
+    - time: 0.06666667
       value: {fileID: 1962164397, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.2
+    - time: 0.13333334
       value: {fileID: 514151621, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.26666668
+    - time: 0.2
       value: {fileID: 1836701298, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.33333334
+    - time: 0.26666668
       value: {fileID: -1249975706, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.4
+    - time: 0.33333334
       value: {fileID: -1152522294, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.46666667
+    - time: 0.4
       value: {fileID: 1565592014, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.53333336
+    - time: 0.46666667
       value: {fileID: -1180809134, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.6
+    - time: 0.53333336
       value: {fileID: 169448577, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.6666667
+    - time: 0.6
       value: {fileID: -1106535819, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.73333335
+    - time: 0.6666667
       value: {fileID: 1650141623, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.8
+    - time: 0.73333335
       value: {fileID: -336772623, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.8666667
+    - time: 0.8
       value: {fileID: 1800603973, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 0.93333334
+    - time: 0.8666667
       value: {fileID: -119965519, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 1
+    - time: 0.93333334
       value: {fileID: -1488572403, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 1.0666667
+    - time: 1
       value: {fileID: 333244747, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 1.1333333
+    - time: 1.0666667
       value: {fileID: 602058233, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 1.2
+    - time: 1.1333333
       value: {fileID: -14111870, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 1.2666667
-      value: {fileID: 739953689, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - time: 1.3333334
-      value: {fileID: -1747987456, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -84,7 +78,6 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1747987456, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
     - {fileID: -1726263128, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
     - {fileID: 1962164397, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
     - {fileID: 514151621, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
@@ -103,14 +96,12 @@ AnimationClip:
     - {fileID: 333244747, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
     - {fileID: 602058233, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
     - {fileID: -14111870, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - {fileID: 739953689, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
-    - {fileID: -1747987456, guid: f1a3b77a8880cec4ca89ea372e4f0334, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4000001
+    m_StopTime: 1.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -131,7 +122,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.2
-    functionName: ChangeToEndScene
+    functionName: GoToSelect
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

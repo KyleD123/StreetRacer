@@ -45,6 +45,8 @@ public class GameManager : MonoBehaviour
     public GameObject stopSign;
     public bool failedToFreeze = false;
 
+    public TMP_Text kills,dist;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -78,7 +80,8 @@ public class GameManager : MonoBehaviour
 
         if(gs == GameState.EndScreen)
         {
-            // stuff
+            kills.text = playerKills.ToString();
+            dist.text = Mathf.RoundToInt(kmTraveled).ToString() + " km";
         }
     }
 
