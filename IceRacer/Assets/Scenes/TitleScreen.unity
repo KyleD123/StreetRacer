@@ -142,7 +142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &160361227
 RectTransform:
   m_ObjectHideFlags: 0
@@ -464,10 +464,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.06904762
     y: 0
-    width: 1
-    height: 1
+    width: 1.1
+    height: 1.1625
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -910,9 +910,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 85ddc648363395c4db037fdf452411eb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62e870691c1cf474c805abebba12adea, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
