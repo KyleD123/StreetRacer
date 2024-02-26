@@ -1,4 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +26,17 @@ public class PlayerMovement : MonoBehaviour
     public bool shieldActive = false;
     public GameObject shield;
     private AudioMaster ass;
+
+    private List<GameObject> roadMarkers;
+
+    public void GrabAndDestroyRoadMarkers()
+    {
+        roadMarkers = GameObject.FindGameObjectsWithTag("GroundMark").ToList();
+        foreach(GameObject obj in roadMarkers)
+        {
+            Destroy(obj);
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -126,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
             }
             if(PlayerCurrentSpeed <= 0 && gm.gameOver && gm.gs != GameState.EndScreen)
             {
+                GrabAndDestroyRoadMarkers();
                 gm.gs = GameState.EndScreen;
                 GameObject.Find("Transition").GetComponent<Animator>().Play("TransitionToEnd");
             }
@@ -246,6 +260,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void HitByCop()
     {
+        GrabAndDestroyRoadMarkers();
         GameObject.Find("Transition").GetComponent<Animator>().Play("TransitionToEnd");
         Destroy(this.gameObject);
     }

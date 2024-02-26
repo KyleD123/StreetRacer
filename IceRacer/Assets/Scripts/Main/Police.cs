@@ -17,8 +17,11 @@ public class Police : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMovement>();
         freezeSprite = transform.GetChild(1).gameObject;
-        pm.shieldActive = false;
-        pm.StartCoroutine("DisableShield");
+        if(pm.shieldActive)
+        {
+            pm.shieldActive = false;
+            pm.StartCoroutine("DisableShield");
+        }
         StartCoroutine(FlashFreeze());
         ass = GameObject.Find("AudioMaster").GetComponent<AudioMaster>();
     }
