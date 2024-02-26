@@ -29,7 +29,7 @@ public class Police : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,pm.transform.position, 0.3f);
+        transform.position = Vector3.MoveTowards(transform.position,pm.transform.position, 0.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -48,7 +48,7 @@ public class Police : MonoBehaviour
     IEnumerator FlashFreeze()
     {
         int count = 1;
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 9; i++)
         {
             freezeSprite.SetActive(false);
             yield return new WaitForSeconds(0.3f);
